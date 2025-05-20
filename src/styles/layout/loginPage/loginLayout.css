@@ -1,0 +1,15 @@
+main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section {
+	&.container {
+		width: 50%;
+		height: 50%;
+		background-color: red;
+	}
+}
