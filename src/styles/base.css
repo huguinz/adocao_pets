@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-body, main {
+body {
     height: 100dvh;
     width: 100dvw;
 }
