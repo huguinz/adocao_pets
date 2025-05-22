@@ -6,20 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/base.css">
     <link rel="stylesheet" href="./src/styles/layout/loginPage/loginLayout.css">
-    <link rel="stylesheet" href="./src/styles/components/loginPage/loginComponents.css">k
-    <title>Entre na sua conta!!</title>
+    <link rel="stylesheet" href="./src/styles/components/loginPage/loginComponents.css">
+    <title>Entre na sua conta!</title>
 </head>
 
 <body>
     <main>
         <section class="container">
-            <div class="form" id="login">
+            <div class="form login_container">
+                <h1>Entrar com</h1>
+                <img src="./src/assets/img/adopteMe.png" alt="Adopte Me Image" width="250px" height="auto">
+                <form id="register_user">
+                    <div class="inputs">
+                        <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_38_184)">
+                                <path
+                                    d="M200 181.25C200 191.606 191.605 200 181.25 200H18.75C8.39453 200 0 191.606 0 181.25V78.4079C3.45396e-05 75.5646 0.646676 72.7587 1.89101 70.2022C3.13534 67.6457 4.94477 65.4057 7.18242 63.6516C16.9141 56.0231 24.9563 49.8372 71.323 16.1864C77.8953 11.3946 90.9363 -0.135486 100 0.00123256C109.062 -0.137049 122.108 11.3965 128.677 16.186C175.039 49.8333 183.092 56.0278 192.818 63.6516C195.055 65.4057 196.865 67.6457 198.109 70.2022C199.353 72.7587 200 75.5646 200 78.4079V181.25ZM174.349 104.451C173.348 102.995 171.341 102.656 169.92 103.706C160.996 110.297 148.255 119.607 128.677 133.815C122.105 138.607 109.064 150.136 100 149.999C90.9332 150.133 77.9066 138.615 71.323 133.815C51.7473 119.608 39.0051 110.298 30.0801 103.706C28.6586 102.656 26.652 102.995 25.6508 104.451L22.107 109.606C21.6477 110.274 21.4658 111.094 21.5999 111.893C21.7339 112.693 22.1734 113.408 22.8254 113.89C31.7656 120.491 44.4871 129.784 63.9594 143.916C71.8789 149.69 86.0391 162.593 100 162.5C113.955 162.594 128.11 149.698 136.04 143.916C155.513 129.784 168.235 120.491 177.174 113.89C177.826 113.408 178.266 112.693 178.4 111.893C178.534 111.094 178.352 110.274 177.893 109.606L174.349 104.451Z"
+                                    fill="black" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_38_184">
+                                    <rect width="200" height="200" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <input type="email" id="input_email" autocomplete="off" placeholder="" required>
+                        <label for="input_email" class="label register email">Email</label>
+                    </div>
 
+                    <div class="inputs">
+                        <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_38_181)">
+                                <path
+                                    d="M200 68.7504C200 106.72 169.22 137.5 131.25 137.5C126.867 137.5 122.582 137.085 118.427 136.301L109.047 146.854C108.168 147.843 107.089 148.635 105.881 149.177C104.673 149.72 103.364 150 102.04 150H87.5V165.625C87.5 170.803 83.3027 175 78.125 175H62.5V190.625C62.5 195.803 58.3027 200 53.125 200H9.375C4.19727 200 0 195.803 0 190.625V160.133C0 157.647 0.987891 155.262 2.7457 153.504L65.9496 90.3C63.7141 83.5211 62.5 76.2777 62.5 68.75C62.5 30.7805 93.2801 0.000390629 131.25 3.73147e-09C169.331 -0.000390621 200 30.6684 200 68.7504ZM131.25 50C131.25 60.3555 139.645 68.75 150 68.75C160.355 68.75 168.75 60.3555 168.75 50C168.75 39.6445 160.355 31.25 150 31.25C139.645 31.25 131.25 39.6445 131.25 50Z"
+                                    fill="black" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_38_181">
+                                    <rect width="200" height="200" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <input type="password" class="input_password" placeholder="" required>
+                        <label for="input_password" class="label register password">Password</label>
+                    </div>
+
+                    <button type="submit">Entrar</button>
+                    <a href="#">Esqueceu a senha?</a>
+                </form>
             </div>
-            <div class="form" id="register">
-
+            <div class="form register_container">
+                <div class="header">
+                    <h1>Olá, pai de</h1>
+                    <svg width="50" height="50" viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="200" height="200" fill="url(#pattern0_6_57)" />
+                        <defs>
+                            <pattern id="pattern0_6_57" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_6_57" transform="scale(0.0111111)" />
+                            </pattern>
+                            <image id="image0_6_57" width="90" height="90" preserveAspectRatio="none"
+                                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFYUlEQVR4nO2cWWhdRRjHf2kal1ZqEURF3Ks0PthoIWqKK4oLLlCUguL+IOJSRCy4oFBrVSgIKooIUoNPKhZpFarQF5eGIqItdcGtJjG4NTHGpolpOzLwXbjGe8+ZM2fmnslkfvC9JXNm/vecWb5lIJFIJBKJRCKRSCQSLWE+cBuwARgAJoExYCuwCljQmm7ESwfwADAMqAz7GTir6s7OVE4DPs0RuN5GgSVEzNHA08DXwF6gH+gFOku0uQzYXUDkmm0D2omQ64CRJoPWoq+waPNs4G8LkWt2FZFxK7A/Z9BTIpwpJwB/lBBZ26tExDJZ+ZWBfQa0GbQ5F/ikpMjadhAJB8t8rArYRQbt3utAZCVzexTYCPJcTptHGmzhTG2cCJgD/GAx+L6cdlc7ElnbLiKgx3Lwv+ccSoYcCv0REfCk5eAnM9q80qHISvb0M57NloMfy2hznWOhLyMC+j3Mm1sdijwo28QZzx5LAd7LaHPQodCPEQlTlgKszmhzwuH++QgiwcbRo4DujDab+UqK2t1ExDYLAb7JOYJ/5UDkj2OZm2u8YCHCnTlt9pYU+VfguJxndMg2cp0svgMyZemv6UtgPXBNSC7WSywcPB05bV5bQuS/gKU5R/snChyIdKChiwDQU8Dnhp2eyJmba7QXjKTU7LeM9ueKT8bGfzKa8+O1jHMMdh/7gBsLtNklAzQVQ3/+JzZp63gH7tahUAK+KySCohqYdtxfbdHmUoNPXL/F92QsfN3iV1EOTEfXg6BTFrJ+EX0nsEbmRVv0W/SgvJEj4iPRp8o3gJuAQzL+91w56rsQufbVJKaxyEEIbLr9Of0hs50Oy/29yWKeqON+DyJr+6n+IbOd+SXcAnn2VtWDC4nbPYms7ZaqBxcSGzyJrLeI86oeXEgMeBJ6ZdUDC41JDyL3GfhnZh1jjkXWJ8+TCIxjxPX4EPAKsAnYLp/zcJ0I2sP2I/CO/O1ih33ocyjyqKETzDuHActF1DJxvgPAFuBiB31a5UjkX0JIZNcdeNnDZ6qA10vG+RY4SL75EDiWCjldnDnKs31XcjpZYhl3HJbdRWUhML1/fMkg91k5XoS0Y8iWMwsEDwYlLaHSiHmXo2Cpsgzilhl8u8T91ovLdlgcQwOSj/cMcHkIQdwLZIegKrReIueKjIhJK+2A/OBRcqo4uVUg9gGRsiUAcdW0t1rXGEbFeQEIq0IOjLri+QBEVQ1Muz+jYkcAoqoGputkytba9EiFwvtSK75HpqXdsud+EbjUsDSvNK4qoZRj09tMGw6SvI/vCzxru6QqeCWELZ1qkulUlJ4Sh60py3JqY3YFIKpqYPozL8LNDoIAe0teFJDJuwGIqkpWvy536JfxdjK9KwBRVROPnglHOV5nvOVyLPSQSqUcmM69M+Epx8/1Wt68MgBh1TR707Dvrj2NOvvfG20tcvCrAva4Yd/HHT9X77u9cqjHZBRlYXqB81lg2mwBLpNyXOg0tbZELaFyaKbRltcc7tt1LU3LoywbWxzKUnU2Jj+6CZ0ODl0TkuReGScDj1jcNqNKms7/KML1Jb7CnVKTE5Q71WVxvMqwOyz61y13N5k+41s5QwSZ+tUheRg+Rd4v9+jZ7p4ulGuF+iQjdJ9MRf1yBcYaeYNNp6ZKxXaZhqUaJLMkhPM9Cn1DUvm/+Mj9GBJ/cqKORz0I/XBS+P8skrCQcmQDUviTaMAmh0JXemAInTOAfxyIvLlVAdKZzFoHl5royoFEDnOAty1FHm9F9Dkm5ln4s0diuQiw1bQB9xmGxXRCyylVd3imc7hcVrVRKrEmxKH+BfBsmioSiUQikUgkEolEgtbxL5sMAxT8E0NlAAAAAElFTkSuQmCC" />
+                        </defs>
+                    </svg>
+                    <img src="./src/assets/img/adopteMe.png" alt="Adopte Me Image" width="250px" height="auto">
+                </div>
+                <div class="description">
+                    <p>Bem-vindo ao nosso cantinho de amor e esperança!</p>
+                    <p>Cadastre-se e procure por um novo amigo!</p>
+                    <button type="button" id="register_button">Cadastrar</button>
+                </div>
             </div>
         </section>
     </main>
+
+    <script type="module" src="./src/scripts/main.js"></script>
 </body>
 </html>
