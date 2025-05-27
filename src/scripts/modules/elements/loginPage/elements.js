@@ -7,7 +7,11 @@ export function loginPageElements() {
 		toggleFormButton: document.querySelectorAll(' .toggle_form_button '),
 		getByToggleClass: document.getElementsByClassName('toggle_register'),
 		overlayContainerLogin: document.querySelectorAll(' .login_desc ')[0],
-		overlayContainerRegister: document.querySelectorAll(' .register_desc ')[0]
+		overlayContainerRegister: document.querySelectorAll(' .register_desc ')[0],
+		nameUserRegister: document.getElementById('input_name'),
+		emailUserRegister: document.getElementById('input_email_register'),
+		passwordUserRegister: document.getElementById('input_password_register'),
+		telephoneUserRegister: document.getElementById('input_telephone')
 	}
 
 	return elements
