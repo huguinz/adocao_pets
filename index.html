@@ -111,9 +111,9 @@
                         </div>
                         <div class="dropdown">
                             <input type="checkbox" id="options_view_button" name="register">
-                            <label for="options_view_button">
+                            <label for="options_view_button" id="label_for_options">
                                 <div class="dropdown_hidden">
-                                    <p>Interessado em</p>
+                                    <p>Você é:</p>
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <rect y="20" width="20" height="20" transform="rotate(-90 0 20)" fill="url(#pattern0_162_4)" />
@@ -129,23 +129,29 @@
                             </label>
                             <div class="options">
                                 <div class="inputs">
-                                    <input type="radio" id="adopte_pet" name="register">
-                                    <label for="adopte_pet">
-                                        <p>Adotar pets</p>
+                                    <input type="radio" id="adopte" class="options_input_register" name="register">
+                                    <label for="adopte">
+                                        <p>Tutor</p>
                                     </label>
                                 </div>
 
                                 <div class="inputs">
-                                    <input type="radio" id="divulge_pet" name="register">
-                                    <label for="divulge_pet">
-                                        <p>Divulgar uma adoção</p>
+                                    <input type="radio" id="ong" class="options_input_register" name="register">
+                                    <label for="ong">
+                                        <p>ONG</p>
+                                    </label>
+                                </div>
+
+                                <div class="inputs">
+                                    <input type="radio" id="both" class="options_input_register" name="register">
+                                    <label for="both">
+                                        <p>Ambos</p>
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <button type="submit" id="register_btn">Cadastrar</button>
 
-                        <a href="#">Faz parte de uma ONG?</a>
                     </form>
                 </div>
             </section>
