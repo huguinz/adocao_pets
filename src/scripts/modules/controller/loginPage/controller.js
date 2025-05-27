@@ -13,3 +13,11 @@ export const validateToggleClass = (toggleLogin, toggleRegister) => {
 		document.title = defaultTitle
 	}
 }
+
+export const addOrRemoveMoveClass = (className) => {
+	if (!className.length) {
+		console.log('ta no unmove pai')
+	} else {
+		console.log('ta nao')
+	}
+}

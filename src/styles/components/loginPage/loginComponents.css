@@ -18,7 +18,17 @@ section {
 					opacity: 1;
 					pointer-events: all;
 					z-index: 4;
-					transition: transform 0.7s, pointer-events 0.7s;
+					transition: transform 0.7s, opacity 1s;
+					transform: translateX(0%);
+				}
+			}
+
+			&:has(.register_desc) {
+				& .register_desc {
+					opacity: 1;
+					pointer-events: all;
+					z-index: 4;
+					transition: transform 0.7s, opacity 1s;
 					transform: translateX(0%);
 				}
 			}
@@ -125,6 +135,7 @@ div {
 		background-color: var(--primary-color);
 		transform: translateX(0%);
 		transition: transform 0.7s;
+		opacity: 1;
 
 		&.move {
 			transform: translateX(-100%);

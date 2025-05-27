@@ -11,7 +11,8 @@ export function loginPageElements() {
 		nameUserRegister: document.getElementById('input_name'),
 		emailUserRegister: document.getElementById('input_email_register'),
 		passwordUserRegister: document.getElementById('input_password_register'),
-		telephoneUserRegister: document.getElementById('input_telephone')
+		telephoneUserRegister: document.getElementById('input_telephone'),
+		moveClass: document.querySelectorAll(' .move ')
 	}
 
 	return elements
