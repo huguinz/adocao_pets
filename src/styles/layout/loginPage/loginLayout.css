@@ -17,6 +17,7 @@ section {
 		height: 100%;
 		width: 100%;
 		display: flex;
+		z-index: 3;
 	}
 
 	&.container_overlay_form {
@@ -162,7 +163,6 @@ div {
 		transform: translateX(100%);
 		opacity: 0;
 		pointer-events: none;
-		z-index: 2;
 
 		& img {
 			width: 80%;

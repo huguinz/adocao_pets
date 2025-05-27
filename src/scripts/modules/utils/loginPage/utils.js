@@ -1,19 +1,16 @@
 'use strict'
 
-export function defaultElements() {
+export const defaultElements = () => {
 	const defaultElements = {
-		defaultTitle: 'Entre na sua conta!',
-		defaultButtonTextRegister: 'Cadastrar',
-		defaultPageTitle: 'Entre com'
+		defaultTitle: 'Entre na sua conta!'
 	}
 
 	return defaultElements
 }
 
-export function toggleElements() {
+export const toggleElements = () => {
 	const toggleElements = {
-		title: 'Cadastre-se!',
-		buttonTextRegister: 'Entrar'
+		title: 'Cadastre-se!'
 	}
 
 	return toggleElements

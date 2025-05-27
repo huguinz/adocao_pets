@@ -2,11 +2,12 @@
 
 export function loginPageElements() {
 	const elements = {
-		loginContainer: document.getElementsByClassName('login_container')[0],
-		registerContainer: document.getElementsByClassName('register_container')[0],
-		toogleFormButton: document.querySelectorAll(' .toggle_form_button '),
-		createOrRegisterTitle: document.getElementById('principal_title'),
-		getByToggleClass: document.getElementsByClassName('toggle_register')
+		underlayContainer: document.querySelectorAll(' .container_underlay_form ')[0],
+		overlayContainer: document.querySelectorAll(' .container_overlay_form ')[0],
+		toggleFormButton: document.querySelectorAll(' .toggle_form_button '),
+		getByToggleClass: document.getElementsByClassName('toggle_register'),
+		overlayContainerLogin: document.querySelectorAll(' .login_desc ')[0],
+		overlayContainerRegister: document.querySelectorAll(' .register_desc ')[0]
 	}
 
 	return elements

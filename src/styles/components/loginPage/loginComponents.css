@@ -111,6 +111,12 @@ div {
 
 	&.register_desc {
 		background-color: var(--primary-color);
+		transform: translateX(0%);
+		transition: transform 0.7s;
+
+		&.move {
+			transform: translateX(-100%);
+		}
 	}
 
 	&.header {
