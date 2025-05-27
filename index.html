@@ -12,71 +12,170 @@
 
 <body>
     <main>
-        <section class="container">
-            <div class="form login_container">
-                <h1>Entrar com</h1>
-                <img src="./src/assets/img/adopteMe.png" alt="Adopte Me Image" width="250px" height="auto">
-                <form id="register_user">
-                    <div class="inputs">
-                        <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_38_184)">
+        <section class="container_form">
+            <section class="container_underlay_form">
+                <div class="login_form">
+                    <h1>Entrar com</h1>
+                    <img src="./src/assets/img/adopteMe.png" alt="Adopte me image">
+                    <form class="sign_in">
+                        <div class="inputs">
+                            <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_38_184)">
+                                    <path
+                                        d="M200 181.25C200 191.606 191.605 200 181.25 200H18.75C8.39453 200 0 191.606 0 181.25V78.4079C3.45396e-05 75.5646 0.646676 72.7587 1.89101 70.2022C3.13534 67.6457 4.94477 65.4057 7.18242 63.6516C16.9141 56.0231 24.9563 49.8372 71.323 16.1864C77.8953 11.3946 90.9363 -0.135486 100 0.00123256C109.062 -0.137049 122.108 11.3965 128.677 16.186C175.039 49.8333 183.092 56.0278 192.818 63.6516C195.055 65.4057 196.865 67.6457 198.109 70.2022C199.353 72.7587 200 75.5646 200 78.4079V181.25ZM174.349 104.451C173.348 102.995 171.341 102.656 169.92 103.706C160.996 110.297 148.255 119.607 128.677 133.815C122.105 138.607 109.064 150.136 100 149.999C90.9332 150.133 77.9066 138.615 71.323 133.815C51.7473 119.608 39.0051 110.298 30.0801 103.706C28.6586 102.656 26.652 102.995 25.6508 104.451L22.107 109.606C21.6477 110.274 21.4658 111.094 21.5999 111.893C21.7339 112.693 22.1734 113.408 22.8254 113.89C31.7656 120.491 44.4871 129.784 63.9594 143.916C71.8789 149.69 86.0391 162.593 100 162.5C113.955 162.594 128.11 149.698 136.04 143.916C155.513 129.784 168.235 120.491 177.174 113.89C177.826 113.408 178.266 112.693 178.4 111.893C178.534 111.094 178.352 110.274 177.893 109.606L174.349 104.451Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_38_184">
+                                        <rect width="200" height="200" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <input type="email" id="input_email" name="login" placeholder="" required>
+                            <label for="input_email">Email</label>
+                        </div>
+                        <div class="inputs">
+                            <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_38_181)">
+                                    <path
+                                        d="M200 68.7504C200 106.72 169.22 137.5 131.25 137.5C126.867 137.5 122.582 137.085 118.427 136.301L109.047 146.854C108.168 147.843 107.089 148.635 105.881 149.177C104.673 149.72 103.364 150 102.04 150H87.5V165.625C87.5 170.803 83.3027 175 78.125 175H62.5V190.625C62.5 195.803 58.3027 200 53.125 200H9.375C4.19727 200 0 195.803 0 190.625V160.133C0 157.647 0.987891 155.262 2.7457 153.504L65.9496 90.3C63.7141 83.5211 62.5 76.2777 62.5 68.75C62.5 30.7805 93.2801 0.000390629 131.25 3.73147e-09C169.331 -0.000390621 200 30.6684 200 68.7504ZM131.25 50C131.25 60.3555 139.645 68.75 150 68.75C160.355 68.75 168.75 60.3555 168.75 50C168.75 39.6445 160.355 31.25 150 31.25C139.645 31.25 131.25 39.6445 131.25 50Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_38_181">
+                                        <rect width="200" height="200" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <input type="password" id="input_password" name="login" placeholder="" required>
+                            <label for="input_password">Senha</label>
+                        </div>
+
+                        <button type="submit">Entrar</button>
+
+                        <a href="#">Esqueceu a senha?</a>
+                    </form>
+                </div>
+                <div class="register_form">
+                    <h1>Criar conta</h1>
+                    <form class="sign_up">
+                        <div class="inputs">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                    d="M200 181.25C200 191.606 191.605 200 181.25 200H18.75C8.39453 200 0 191.606 0 181.25V78.4079C3.45396e-05 75.5646 0.646676 72.7587 1.89101 70.2022C3.13534 67.6457 4.94477 65.4057 7.18242 63.6516C16.9141 56.0231 24.9563 49.8372 71.323 16.1864C77.8953 11.3946 90.9363 -0.135486 100 0.00123256C109.062 -0.137049 122.108 11.3965 128.677 16.186C175.039 49.8333 183.092 56.0278 192.818 63.6516C195.055 65.4057 196.865 67.6457 198.109 70.2022C199.353 72.7587 200 75.5646 200 78.4079V181.25ZM174.349 104.451C173.348 102.995 171.341 102.656 169.92 103.706C160.996 110.297 148.255 119.607 128.677 133.815C122.105 138.607 109.064 150.136 100 149.999C90.9332 150.133 77.9066 138.615 71.323 133.815C51.7473 119.608 39.0051 110.298 30.0801 103.706C28.6586 102.656 26.652 102.995 25.6508 104.451L22.107 109.606C21.6477 110.274 21.4658 111.094 21.5999 111.893C21.7339 112.693 22.1734 113.408 22.8254 113.89C31.7656 120.491 44.4871 129.784 63.9594 143.916C71.8789 149.69 86.0391 162.593 100 162.5C113.955 162.594 128.11 149.698 136.04 143.916C155.513 129.784 168.235 120.491 177.174 113.89C177.826 113.408 178.266 112.693 178.4 111.893C178.534 111.094 178.352 110.274 177.893 109.606L174.349 104.451Z"
+                                    d="M10 2.375C11.45 2.375 12.625 3.55 12.625 5C12.625 6.45 11.45 7.625 10 7.625C8.55 7.625 7.375 6.45 7.375 5C7.375 3.55 8.55 2.375 10 2.375ZM10 13.625C13.7125 13.625 17.625 15.45 17.625 16.25V17.625H2.375V16.25C2.375 15.45 6.2875 13.625 10 13.625ZM10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0ZM10 11.25C6.6625 11.25 0 12.925 0 16.25V20H20V16.25C20 12.925 13.3375 11.25 10 11.25Z"
                                     fill="black" />
-                            </g>
+                            </svg>
+                            <input type="text" id="input_name" name="register" placeholder="" required>
+                            <label for="input_name">Nome</label>
+                        </div>
+                        <div class="inputs">
+                            <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_38_184)">
+                                    <path
+                                        d="M200 181.25C200 191.606 191.605 200 181.25 200H18.75C8.39453 200 0 191.606 0 181.25V78.4079C3.45396e-05 75.5646 0.646676 72.7587 1.89101 70.2022C3.13534 67.6457 4.94477 65.4057 7.18242 63.6516C16.9141 56.0231 24.9563 49.8372 71.323 16.1864C77.8953 11.3946 90.9363 -0.135486 100 0.00123256C109.062 -0.137049 122.108 11.3965 128.677 16.186C175.039 49.8333 183.092 56.0278 192.818 63.6516C195.055 65.4057 196.865 67.6457 198.109 70.2022C199.353 72.7587 200 75.5646 200 78.4079V181.25ZM174.349 104.451C173.348 102.995 171.341 102.656 169.92 103.706C160.996 110.297 148.255 119.607 128.677 133.815C122.105 138.607 109.064 150.136 100 149.999C90.9332 150.133 77.9066 138.615 71.323 133.815C51.7473 119.608 39.0051 110.298 30.0801 103.706C28.6586 102.656 26.652 102.995 25.6508 104.451L22.107 109.606C21.6477 110.274 21.4658 111.094 21.5999 111.893C21.7339 112.693 22.1734 113.408 22.8254 113.89C31.7656 120.491 44.4871 129.784 63.9594 143.916C71.8789 149.69 86.0391 162.593 100 162.5C113.955 162.594 128.11 149.698 136.04 143.916C155.513 129.784 168.235 120.491 177.174 113.89C177.826 113.408 178.266 112.693 178.4 111.893C178.534 111.094 178.352 110.274 177.893 109.606L174.349 104.451Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_38_184">
+                                        <rect width="200" height="200" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <input type="email" id="input_email_register" name="register" placeholder="" required>
+                            <label for="input_email_register">Email</label>
+                        </div>
+                        <div class="inputs">
+                            <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_38_181)">
+                                    <path
+                                        d="M200 68.7504C200 106.72 169.22 137.5 131.25 137.5C126.867 137.5 122.582 137.085 118.427 136.301L109.047 146.854C108.168 147.843 107.089 148.635 105.881 149.177C104.673 149.72 103.364 150 102.04 150H87.5V165.625C87.5 170.803 83.3027 175 78.125 175H62.5V190.625C62.5 195.803 58.3027 200 53.125 200H9.375C4.19727 200 0 195.803 0 190.625V160.133C0 157.647 0.987891 155.262 2.7457 153.504L65.9496 90.3C63.7141 83.5211 62.5 76.2777 62.5 68.75C62.5 30.7805 93.2801 0.000390629 131.25 3.73147e-09C169.331 -0.000390621 200 30.6684 200 68.7504ZM131.25 50C131.25 60.3555 139.645 68.75 150 68.75C160.355 68.75 168.75 60.3555 168.75 50C168.75 39.6445 160.355 31.25 150 31.25C139.645 31.25 131.25 39.6445 131.25 50Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_38_181">
+                                        <rect width="200" height="200" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <input type="password" id="input_password_register" name="register" placeholder="" required>
+                            <label for="input_password_register">Senha</label>
+                        </div>
+                        <div class="inputs">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.4296 14.1327L15.0546 12.2577C14.8677 12.178 14.6599 12.1612 14.4627 12.2099C14.2654 12.2585 14.0893 12.3698 13.9608 12.5272L12.0233 14.8944C8.98248 13.4607 6.53535 11.0136 5.10165 7.97283L7.46888 6.0353C7.62657 5.90705 7.73818 5.73091 7.78681 5.53355C7.83545 5.3362 7.81846 5.12837 7.73842 4.94153L5.86338 0.566453C5.77554 0.365046 5.62016 0.200605 5.42406 0.101483C5.22796 0.00236143 5.00341 -0.0252272 4.78915 0.0234743L0.726575 0.960991C0.519997 1.00869 0.335688 1.12501 0.203728 1.29095C0.0717689 1.45689 -4.75872e-05 1.66266 2.36575e-08 1.87468C2.36575e-08 11.8944 8.12123 20 18.1253 20C18.3374 20.0001 18.5433 19.9284 18.7093 19.7964C18.8753 19.6644 18.9917 19.4801 19.0394 19.2734L19.9769 15.2109C20.0253 14.9955 19.9971 14.7701 19.8972 14.5733C19.7973 14.3765 19.632 14.2207 19.4296 14.1327Z"
+                                    fill="black" />
+                            </svg>
+                            <input type="tel" id="input_telephone" name="register" placeholder="" autocomplete="off" required>
+                            <label for="input_telephone">Telefone</label>
+                        </div>
+                        <div class="dropdown">
+                            <input type="checkbox" id="options_view_button" name="register">
+                            <label for="options_view_button">
+                                <div class="dropdown_hidden">
+                                    <p>Interessado em</p>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect y="20" width="20" height="20" transform="rotate(-90 0 20)" fill="url(#pattern0_162_4)" />
+                                        <defs>
+                                            <pattern id="pattern0_162_4" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_162_4" transform="scale(0.01)" />
+                                            </pattern>
+                                            <image id="image0_162_4" width="100" height="100" preserveAspectRatio="none"
+                                                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAplJREFUeAHt3FFL21AYh/G/c36SoYzdDBxDP7NeyNjFvNq+ze50Q1BRBO1L89J66GlyTpI2J+cJlDRpc6K/p0mtkEpMCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCgAwx6CRxJOuw1QrPxV0nXkh4lPUn6KenzEANXMsYXSb8kvUh6lvRH0vfc391i3El6DW7/Fjs5yx20ou3MyKxCv/vFC/tbjoOVDQfz5f9E2UpqMczIvcL5761bb3jwQ3OaCgdaXybKBrjmhbothhna6evj5s3jax+2FPYwRHnv13ZkuJu9HydPVx2C2A6IsqTtGsPMfiTXkPQp8qbkldfntUdJiWFv9GabNZ1Kukk4Us6z9lL2RvYX022CkcXrNRElzrfzGP6jEMUlVvO9xfAfgSgusfxgt9PT1GrX7+8RZUIxPE3NUfZ+mvII4bzGKJON4XFqijL5GDVFKSZGDVGKizHnKMXGmGOU4mPMKcpsYswhyuxilBxltjFKjDL7GCVFqSZGCVGqizHlKNXGmGKU6mNMKQoxvEYz3+d/iYkRxPDFfUQhhutH5ruMQoxIhHD1LqIQI1RvWR4zCjFa8GMPjxGFGDHtjuuHjEKMjuhtTxsiCjHalBMf7xOFGInYXZ+eE4UYXXUzn5dyzYVdn2K39WtWYvdrv5YlM8dys5QjJRZgfT0xeuUYNgoxBojhQ/Q9UojhkgPOc6MQY8AI4VCpUYgRCo6w3DUKMUbAjw3ZFoUYMbkR19vnlE1f7sKX44yI3jb0iaRLSX+b24Wk47aNeBwBBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAAAEEEEAAAQQQQAABBBBAwATeACbssuGwoGJgAAAAAElFTkSuQmCC" />
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </label>
+                            <div class="options">
+                                <div class="inputs">
+                                    <input type="radio" id="adopte_pet" name="register">
+                                    <label for="adopte_pet">
+                                        <p>Adotar pets</p>
+                                    </label>
+                                </div>
+
+                                <div class="inputs">
+                                    <input type="radio" id="divulge_pet" name="register">
+                                    <label for="divulge_pet">
+                                        <p>Divulgar uma adoção</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" id="register_btn">Cadastrar</button>
+
+                        <a href="#">Faz parte de uma ONG?</a>
+                    </form>
+                </div>
+            </section>
+            <section class="container_overlay_form">
+                <div class="login_desc">
+                    <img src="./src/assets/img/adopteMe.png" alt="Adopte me image">
+                    <button type="button" class="toggle_form_button">Entrar</button>
+                </div>
+                <div class="register_desc">
+                    <div class="header">
+                        <h1>Olá, pai de</h1>
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="70" height="70" fill="url(#pattern0_8_82)" />
                             <defs>
-                                <clipPath id="clip0_38_184">
-                                    <rect width="200" height="200" fill="white" />
-                                </clipPath>
+                                <pattern id="pattern0_8_82" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_8_82" transform="scale(0.0111111)" />
+                                </pattern>
+                                <image id="image0_8_82" width="90" height="90" preserveAspectRatio="none"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFYUlEQVR4nO2cWWhdRRjHf2kal1ZqEURF3Ks0PthoIWqKK4oLLlCUguL+IOJSRCy4oFBrVSgIKooIUoNPKhZpFarQF5eGIqItdcGtJjG4NTHGpolpOzLwXbjGe8+ZM2fmnslkfvC9JXNm/vecWb5lIJFIJBKJRCKRSCQSLWE+cBuwARgAJoExYCuwCljQmm7ESwfwADAMqAz7GTir6s7OVE4DPs0RuN5GgSVEzNHA08DXwF6gH+gFOku0uQzYXUDkmm0D2omQ64CRJoPWoq+waPNs4G8LkWt2FZFxK7A/Z9BTIpwpJwB/lBBZ26tExDJZ+ZWBfQa0GbQ5F/ikpMjadhAJB8t8rArYRQbt3utAZCVzexTYCPJcTptHGmzhTG2cCJgD/GAx+L6cdlc7ElnbLiKgx3Lwv+ccSoYcCv0REfCk5eAnM9q80qHISvb0M57NloMfy2hznWOhLyMC+j3Mm1sdijwo28QZzx5LAd7LaHPQodCPEQlTlgKszmhzwuH++QgiwcbRo4DujDab+UqK2t1ExDYLAb7JOYJ/5UDkj2OZm2u8YCHCnTlt9pYU+VfguJxndMg2cp0svgMyZemv6UtgPXBNSC7WSywcPB05bV5bQuS/gKU5R/snChyIdKChiwDQU8Dnhp2eyJmba7QXjKTU7LeM9ueKT8bGfzKa8+O1jHMMdh/7gBsLtNklAzQVQ3/+JzZp63gH7tahUAK+KySCohqYdtxfbdHmUoNPXL/F92QsfN3iV1EOTEfXg6BTFrJ+EX0nsEbmRVv0W/SgvJEj4iPRp8o3gJuAQzL+91w56rsQufbVJKaxyEEIbLr9Of0hs50Oy/29yWKeqON+DyJr+6n+IbOd+SXcAnn2VtWDC4nbPYms7ZaqBxcSGzyJrLeI86oeXEgMeBJ6ZdUDC41JDyL3GfhnZh1jjkXWJ8+TCIxjxPX4EPAKsAnYLp/zcJ0I2sP2I/CO/O1ih33ocyjyqKETzDuHActF1DJxvgPAFuBiB31a5UjkX0JIZNcdeNnDZ6qA10vG+RY4SL75EDiWCjldnDnKs31XcjpZYhl3HJbdRWUhML1/fMkg91k5XoS0Y8iWMwsEDwYlLaHSiHmXo2Cpsgzilhl8u8T91ovLdlgcQwOSj/cMcHkIQdwLZIegKrReIueKjIhJK+2A/OBRcqo4uVUg9gGRsiUAcdW0t1rXGEbFeQEIq0IOjLri+QBEVQ1Muz+jYkcAoqoGputkytba9EiFwvtSK75HpqXdsud+EbjUsDSvNK4qoZRj09tMGw6SvI/vCzxru6QqeCWELZ1qkulUlJ4Sh60py3JqY3YFIKpqYPozL8LNDoIAe0teFJDJuwGIqkpWvy536JfxdjK9KwBRVROPnglHOV5nvOVyLPSQSqUcmM69M+Epx8/1Wt68MgBh1TR707Dvrj2NOvvfG20tcvCrAva4Yd/HHT9X77u9cqjHZBRlYXqB81lg2mwBLpNyXOg0tbZELaFyaKbRltcc7tt1LU3LoywbWxzKUnU2Jj+6CZ0ODl0TkuReGScDj1jcNqNKms7/KML1Jb7CnVKTE5Q71WVxvMqwOyz61y13N5k+41s5QwSZ+tUheRg+Rd4v9+jZ7p4ulGuF+iQjdJ9MRf1yBcYaeYNNp6ZKxXaZhqUaJLMkhPM9Cn1DUvm/+Mj9GBJ/cqKORz0I/XBS+P8skrCQcmQDUviTaMAmh0JXemAInTOAfxyIvLlVAdKZzFoHl5royoFEDnOAty1FHm9F9Dkm5ln4s0diuQiw1bQB9xmGxXRCyylVd3imc7hcVrVRKrEmxKH+BfBsmioSiUQikUgkEolEgtbxL5sMAxT8E0NlAAAAAElFTkSuQmCC" />
                             </defs>
                         </svg>
-                        <input type="email" id="input_email" autocomplete="off" placeholder="" required>
-                        <label for="input_email" class="label register email">Email</label>
                     </div>
-
-                    <div class="inputs">
-                        <svg width="20" height="20" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_38_181)">
-                                <path
-                                    d="M200 68.7504C200 106.72 169.22 137.5 131.25 137.5C126.867 137.5 122.582 137.085 118.427 136.301L109.047 146.854C108.168 147.843 107.089 148.635 105.881 149.177C104.673 149.72 103.364 150 102.04 150H87.5V165.625C87.5 170.803 83.3027 175 78.125 175H62.5V190.625C62.5 195.803 58.3027 200 53.125 200H9.375C4.19727 200 0 195.803 0 190.625V160.133C0 157.647 0.987891 155.262 2.7457 153.504L65.9496 90.3C63.7141 83.5211 62.5 76.2777 62.5 68.75C62.5 30.7805 93.2801 0.000390629 131.25 3.73147e-09C169.331 -0.000390621 200 30.6684 200 68.7504ZM131.25 50C131.25 60.3555 139.645 68.75 150 68.75C160.355 68.75 168.75 60.3555 168.75 50C168.75 39.6445 160.355 31.25 150 31.25C139.645 31.25 131.25 39.6445 131.25 50Z"
-                                    fill="black" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_38_181">
-                                    <rect width="200" height="200" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <input type="password" class="input_password" placeholder="" required>
-                        <label for="input_password" class="label register password">Password</label>
+                    <div class="description">
+                        <h2>Bem-vindo ao nosso cantinho de amor e esperança!</h2>
+                        <p>Cadastre-se e procure por um novo amigo!</p>
+                        <button type="button" class="toggle_form_button">Cadastre-se</button>
                     </div>
-
-                    <button type="submit">Entrar</button>
-                    <a href="#">Esqueceu a senha?</a>
-                </form>
-            </div>
-            <div class="form register_container">
-                <div class="header">
-                    <h1>Olá, pai de</h1>
-                    <svg width="50" height="50" viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <rect width="200" height="200" fill="url(#pattern0_6_57)" />
-                        <defs>
-                            <pattern id="pattern0_6_57" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <use xlink:href="#image0_6_57" transform="scale(0.0111111)" />
-                            </pattern>
-                            <image id="image0_6_57" width="90" height="90" preserveAspectRatio="none"
-                                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFYUlEQVR4nO2cWWhdRRjHf2kal1ZqEURF3Ks0PthoIWqKK4oLLlCUguL+IOJSRCy4oFBrVSgIKooIUoNPKhZpFarQF5eGIqItdcGtJjG4NTHGpolpOzLwXbjGe8+ZM2fmnslkfvC9JXNm/vecWb5lIJFIJBKJRCKRSCQSLWE+cBuwARgAJoExYCuwCljQmm7ESwfwADAMqAz7GTir6s7OVE4DPs0RuN5GgSVEzNHA08DXwF6gH+gFOku0uQzYXUDkmm0D2omQ64CRJoPWoq+waPNs4G8LkWt2FZFxK7A/Z9BTIpwpJwB/lBBZ26tExDJZ+ZWBfQa0GbQ5F/ikpMjadhAJB8t8rArYRQbt3utAZCVzexTYCPJcTptHGmzhTG2cCJgD/GAx+L6cdlc7ElnbLiKgx3Lwv+ccSoYcCv0REfCk5eAnM9q80qHISvb0M57NloMfy2hznWOhLyMC+j3Mm1sdijwo28QZzx5LAd7LaHPQodCPEQlTlgKszmhzwuH++QgiwcbRo4DujDab+UqK2t1ExDYLAb7JOYJ/5UDkj2OZm2u8YCHCnTlt9pYU+VfguJxndMg2cp0svgMyZemv6UtgPXBNSC7WSywcPB05bV5bQuS/gKU5R/snChyIdKChiwDQU8Dnhp2eyJmba7QXjKTU7LeM9ueKT8bGfzKa8+O1jHMMdh/7gBsLtNklAzQVQ3/+JzZp63gH7tahUAK+KySCohqYdtxfbdHmUoNPXL/F92QsfN3iV1EOTEfXg6BTFrJ+EX0nsEbmRVv0W/SgvJEj4iPRp8o3gJuAQzL+91w56rsQufbVJKaxyEEIbLr9Of0hs50Oy/29yWKeqON+DyJr+6n+IbOd+SXcAnn2VtWDC4nbPYms7ZaqBxcSGzyJrLeI86oeXEgMeBJ6ZdUDC41JDyL3GfhnZh1jjkXWJ8+TCIxjxPX4EPAKsAnYLp/zcJ0I2sP2I/CO/O1ih33ocyjyqKETzDuHActF1DJxvgPAFuBiB31a5UjkX0JIZNcdeNnDZ6qA10vG+RY4SL75EDiWCjldnDnKs31XcjpZYhl3HJbdRWUhML1/fMkg91k5XoS0Y8iWMwsEDwYlLaHSiHmXo2Cpsgzilhl8u8T91ovLdlgcQwOSj/cMcHkIQdwLZIegKrReIueKjIhJK+2A/OBRcqo4uVUg9gGRsiUAcdW0t1rXGEbFeQEIq0IOjLri+QBEVQ1Muz+jYkcAoqoGputkytba9EiFwvtSK75HpqXdsud+EbjUsDSvNK4qoZRj09tMGw6SvI/vCzxru6QqeCWELZ1qkulUlJ4Sh60py3JqY3YFIKpqYPozL8LNDoIAe0teFJDJuwGIqkpWvy536JfxdjK9KwBRVROPnglHOV5nvOVyLPSQSqUcmM69M+Epx8/1Wt68MgBh1TR707Dvrj2NOvvfG20tcvCrAva4Yd/HHT9X77u9cqjHZBRlYXqB81lg2mwBLpNyXOg0tbZELaFyaKbRltcc7tt1LU3LoywbWxzKUnU2Jj+6CZ0ODl0TkuReGScDj1jcNqNKms7/KML1Jb7CnVKTE5Q71WVxvMqwOyz61y13N5k+41s5QwSZ+tUheRg+Rd4v9+jZ7p4ulGuF+iQjdJ9MRf1yBcYaeYNNp6ZKxXaZhqUaJLMkhPM9Cn1DUvm/+Mj9GBJ/cqKORz0I/XBS+P8skrCQcmQDUviTaMAmh0JXemAInTOAfxyIvLlVAdKZzFoHl5royoFEDnOAty1FHm9F9Dkm5ln4s0diuQiw1bQB9xmGxXRCyylVd3imc7hcVrVRKrEmxKH+BfBsmioSiUQikUgkEolEgtbxL5sMAxT8E0NlAAAAAElFTkSuQmCC" />
-                        </defs>
-                    </svg>
-                    <img src="./src/assets/img/adopteMe.png" alt="Adopte Me Image" width="250px" height="auto">
                 </div>
-                <div class="description">
-                    <p>Bem-vindo ao nosso cantinho de amor e esperança!</p>
-                    <p>Cadastre-se e procure por um novo amigo!</p>
-                    <button type="button" id="register_button">Cadastrar</button>
-                </div>
-            </div>
+            </section>
         </section>
     </main>
 

@@ -5,110 +5,262 @@ main {
 }
 
 section {
-	&.container {
+	&.container_form {
 		width: 960px;
 		height: 648px;
 		display: flex;
 		overflow: hidden;
+		position: relative;
 	}
 
-	& .form {
+	&.container_underlay_form {
+		height: 100%;
+		width: 100%;
+		display: flex;
+	}
+
+	&.container_overlay_form {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		position: absolute;
+	}
+}
+
+div {
+	&.login_form {
 		height: 100%;
 		width: 50%;
-		padding: 3rem 1rem;
+		padding: 32px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 16px;
 
 		& h1 {
-			font-size: clamp(1.8rem, calc(1.3vw + 1rem), 3rem);
+			text-align: center;
+			font-size: 3em;
 			font-weight: normal;
+			font-family: var(--secondary-font);
 		}
 
 		& img {
-			margin: 12px 0;
+			width: 70%;
+			height: auto;
+		}
+	}
+
+	&.register_form {
+		height: 100%;
+		width: 50%;
+		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+
+		& h1 {
+			text-align: center;
+			font-size: 3em;
+			font-weight: normal;
+			font-family: var(--secondary-font);
+		}
+	}
+
+	&.inputs {
+		position: relative;
+
+		svg {
+			position: absolute;
+			top: 14px;
+			left: 12px;
 		}
 
-		&.register_container {
-			& .header {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				height: 20%;
+		& label {
+			position: absolute;
+			left: 38px;
+			top: 14px;
+			font-size: 1rem;
+		}
+
+		& input {
+			width: 100%;
+			font-size: 1rem;
+			padding: 18px 18px 12px 38px;
+		}
+
+		&:has(input[type='radio']) {
+			height: 50px;
+			width: 368px;
+			position: relative;
+			opacity: 0;
+			pointer-events: none;
+			z-index: -1;
+			transition: opacity 0.15s;
+
+			& input {
+				display: none;
+			}
+
+			& label {
+				all: unset;
+				inset: 0;
 				width: 100%;
-
-				h1 {
-					margin-right: 12px;
-				}
-			}
-
-			& .description {
 				height: 100%;
-				margin-top: 1rem;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-evenly;
-				align-items: center;
+				position: absolute;
+				cursor: pointer;
 
-				& p {
-					text-align: center;
-					max-width: 50%;
-					font-size: clamp(0.5rem, calc(0.7vw + 0.5rem), 1.5rem);
-				}
-
-				& button {
-					padding: 1rem 2rem;
-					width: max-content;
-					margin: 0 auto;
-					font-size: 1.2rem;
+				p {
+					margin-left: 12px;
+					margin-top: 28px;
+					user-select: none;
+					font-size: 0.9rem;
 				}
 			}
+		}
+	}
+
+	&.dropdown {
+		position: relative;
+
+		& input[type='checkbox'] {
+			display: none;
+		}
+
+		& #options_view_button:checked ~ .options .inputs {
+			opacity: 1;
+			pointer-events: all;
+			z-index: 2;
+		}
+	}
+
+	&.dropdown_hidden {
+		padding: 18px 18px 12px 38px;
+		position: relative;
+
+		& svg {
+			position: absolute;
+			right: 12px;
+			top: 16px;
+		}
+	}
+
+	&.options {
+		position: absolute;
+		top: 56px;
+	}
+
+	&.login_desc {
+		height: 100%;
+		width: 50%;
+		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		transform: translateX(100%);
+		opacity: 0;
+		pointer-events: none;
+		z-index: 2;
+
+		& img {
+			width: 80%;
+			height: auto;
+		}
+
+		& button {
+			padding: 12px 48px;
+			margin: 0 auto;
+			font-size: 1.2rem;
+		}
+	}
+
+	&.register_desc {
+		height: 100%;
+		width: 50%;
+		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		z-index: 3;
+	}
+
+	&.header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		width: 100%;
+		padding-bottom: 32px;
+
+		& h1 {
+			text-align: center;
+			font-size: 3em;
+			font-weight: normal;
+			font-family: var(--secondary-font);
+		}
+	}
+
+	&.description {
+		height: 100%;
+		padding: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		text-align: center;
+
+		& h2,
+		p {
+			max-width: 80%;
+			font-weight: normal;
+			font-size: 1.3rem;
+		}
+
+		& button {
+			padding: 12px 48px;
+			margin: 0 auto;
+			font-size: 1.2rem;
 		}
 	}
 }
 
 form {
-	&#register_user {
+	&.sign_in {
 		height: 100%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		gap: 24px;
-		padding: 3rem;
+		padding: 1.5rem;
+	}
 
-		& .inputs {
-			position: relative;
+	&.sign_up {
+		height: max-content;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 16px;
+		padding: 1.5rem;
+	}
 
-			svg {
-				position: absolute;
-				top: 14px;
-				left: 12px;
-			}
+	& button {
+		padding: 12px 48px;
+		margin: 0 auto;
+		font-size: 1.2rem;
+		z-index: 1;
 
-			& label {
-				position: absolute;
-				left: 38px;
-				top: 14px;
-				font-size: 1rem;
-			}
-
-			& input {
-				width: 100%;
-				font-size: 1rem;
-				padding: 18px 18px 12px 38px;
-			}
+		&#register_btn {
+			margin-top: 16px;
 		}
+	}
 
-		& button {
-			width: max-content;
-			padding: 10px 20px;
-			margin: 0 auto;
-			font-size: 1.2rem;
-		}
-
-		& a {
-			margin: 0 auto;
-		}
+	& a {
+		margin: 0 auto;
+		z-index: 1;
 	}
 }
