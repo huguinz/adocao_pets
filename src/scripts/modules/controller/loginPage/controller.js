@@ -1,8 +1,11 @@
 'use strict'
 
 import { defaultElements, toggleElements, optionsLabelCustom } from '../../utils/loginPage/utils.js'
+import { registerNewUser } from '../../api/loginPage/post/registerNewUser.js'
+import { getCategories } from '../../api/loginPage/get/getCategories.js'
+import { loginUser } from '../../api/loginPage/post/loginUser.js'
 
-export const addOrRemoveMoveClass = (moveClass, unmoveClass) => {
+export const addOrRemoveMoveClass = (moveClass, unmoveClass, inputsRegister, inputsLogin) => {
 	const { title } = toggleElements()
 	const { defaultTitle } = defaultElements()
 
@@ -10,6 +13,10 @@ export const addOrRemoveMoveClass = (moveClass, unmoveClass) => {
 		unmoveClass.forEach((element) => {
 			element.classList.remove('unmove')
 			element.classList.add('move')
+		})
+
+		inputsLogin.forEach((inputs) => {
+			inputs.value = ''
 		})
 
 		document.title = title
@@ -21,16 +28,22 @@ export const addOrRemoveMoveClass = (moveClass, unmoveClass) => {
 		element.classList.add('unmove')
 	})
 
+	inputsRegister.forEach((inputs) => {
+		inputs.value = ''
+	})
+
 	document.title = defaultTitle
 }
 
-export const selectOptionsCategory = (
+export const selectOptionsCategory = async (
 	chosenOption,
 	optionsCheckbox,
 	optionsContainer,
 	personalIdentification,
 	personalIdentificationInput,
-	dateOfBirthInput
+	dateOfBirthInput,
+	labelDateOfBirthInput,
+	inputsRegister
 ) => {
 	const isOptionChecked = chosenOption.checked
 
@@ -46,11 +59,20 @@ export const selectOptionsCategory = (
 
 				if (optionsTextContent.textContent.trim() == 'ONG') {
 					dateOfBirthInput.style.display = 'none'
+					dateOfBirthInput.value = ''
+					labelDateOfBirthInput.style.display = 'none'
+					dateOfBirthInput.required = false
 					personalIdentification.textContent = 'CNPJ'
 					personalIdentificationInput.maxLength = 14
+
+					inputsRegister.forEach((inputs) => {
+						inputs.value = ''
+					})
 				} else {
 					personalIdentification.textContent = 'CPF'
 					dateOfBirthInput.style.display = 'block'
+					labelDateOfBirthInput.style.display = 'block'
+					dateOfBirthInput.required = true
 					personalIdentificationInput.maxLength = 11
 				}
 			})
@@ -77,4 +99,81 @@ export const validateInputDataValue = (value) => {
 	value = formatted
 
 	return value
+}
+
+export const getDataCategories = async () => {
+	try {
+		const dataCategories = await getCategories()
+
+		if (dataCategories.status_code == 200) {
+			const categories = dataCategories.categorias
+
+			return categories
+		}
+	} catch (error) {
+		return error
+	}
+}
+
+export const validateResponseRegister = async (personalIdentification) => {
+	try {
+		const categories = await getDataCategories()
+
+		if (personalIdentification.length === 14) {
+			for (const category of categories) {
+				if (category.nome_categoria === 'ONG') {
+					const response = await registerNewUser('', personalIdentification, category.id)
+
+					if (response.status === 201) {
+						window.location.reload()
+						return
+					} else {
+						return false
+					}
+				}
+			}
+		} else if (personalIdentification.length === 11) {
+			for (const category of categories) {
+				if (category.nome_categoria === 'TUTOR') {
+					const response = await registerNewUser(personalIdentification, '', category.id)
+
+					if (response.status === 201) {
+						window.location.reload()
+						return
+					} else {
+						return false
+					}
+				}
+			}
+		} else {
+			return false
+		}
+	} catch (error) {
+		return error
+	}
+}
+
+export const formatDate = (date) => {
+	try {
+		const [dia, mes, ano] = date.split('/')
+		const acceptDate = `${ano}-${mes}-${dia}`
+
+		return acceptDate ? acceptDate : false
+	} catch (error) {
+		return false
+	}
+}
+
+export const validateLoginUser = async () => {
+	try {
+		const responseLogin = await loginUser()
+
+		if (responseLogin.status_code === 200) {
+			window.location.href = '#'
+		} else {
+			return false
+		}
+	} catch (error) {
+		return false
+	}
 }
