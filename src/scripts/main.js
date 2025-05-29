@@ -1,7 +1,7 @@
 'use strict'
 
 import { loginPageElements } from './modules/elements/loginPage/elements.js'
-import { addOrRemoveMoveClass, selectOptionsCategory } from './modules/controller/loginPage/controller.js'
+import { addOrRemoveMoveClass, selectOptionsCategory, validateInputDataValue } from './modules/controller/loginPage/controller.js'
 
 const setPageStatus = () => {
 	const { moveClass, unmoveClass } = loginPageElements()
@@ -15,7 +15,23 @@ const setPageStatus = () => {
 		item.addEventListener('click', setPageStatus)
 	})
 })()
+;(function selectCategory() {
+	const { optionsInputRegister, optionsCheckbox, optionsContainer, personalIdentification, personalIdentificationInput, dateOfBirthInput } =
+		loginPageElements()
 
-setInterval(() => {
-	selectOptionsCategory()
-}, 0)
+	optionsInputRegister.forEach((item) => {
+		item.addEventListener('change', () =>
+			selectOptionsCategory(item, optionsCheckbox, optionsContainer, personalIdentification, personalIdentificationInput, dateOfBirthInput)
+		)
+	})
+})()
+;(function callValidateInputDataValue() {
+	const { dateOfBirthInput } = loginPageElements()
+
+	dateOfBirthInput.addEventListener('input', () => {
+		let valueDate = dateOfBirthInput.value
+		const validateDate = validateInputDataValue(valueDate)
+
+		valueDate = dateOfBirthInput.value = validateDate
+	})
+})()

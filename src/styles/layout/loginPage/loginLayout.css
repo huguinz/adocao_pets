@@ -71,6 +71,10 @@ div {
 			font-weight: normal;
 			font-family: var(--secondary-font);
 		}
+
+		& p {
+			margin-bottom: 4px;
+		}
 	}
 
 	&.inputs {

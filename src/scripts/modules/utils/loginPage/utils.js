@@ -15,3 +15,9 @@ export const toggleElements = () => {
 
 	return toggleElements
 }
+
+export const optionsLabelCustom = (id) => {
+	const label = document.querySelectorAll(`label[for='${id}']`)
+
+	return label
+}

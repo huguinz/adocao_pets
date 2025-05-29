@@ -11,14 +11,17 @@ export function loginPageElements() {
 		nameUserRegister: document.getElementById('input_name'),
 		emailUserRegister: document.getElementById('input_email_register'),
 		passwordUserRegister: document.getElementById('input_password_register'),
-		telephoneUserRegister: document.getElementById('input_telephone'),
 		moveClass: document.querySelectorAll(' .move '),
 		unmoveClass: document.querySelectorAll(' .unmove '),
 		inputsRegister: document.getElementsByName('register'),
 		optionsInputRegister: document.querySelectorAll('.options_input_register'),
 		registerButton: document.getElementById('register_btn'),
-		optionsInput: document.getElementById('options_view_button'),
-		optionsBox: document.getElementById('label_for_options')
+		optionsCheckbox: document.getElementById('options_view_button'),
+		optionsBox: document.getElementById('label_for_options'),
+		optionsContainer: document.querySelectorAll('.dropdown_hidden')[0],
+		personalIdentification: document.querySelectorAll('label[for="input_doc"]')[0],
+		personalIdentificationInput: document.getElementById('input_doc'),
+		dateOfBirthInput: document.getElementById('input_date_of_birth')
 	}
 
 	return elements
