@@ -1,6 +1,12 @@
 'use strict'
 
-import { defaultElements, toggleElements, optionsLabelCustom } from '../../utils/loginPage/utils.js'
+import {
+	defaultElements,
+	toggleElements,
+	optionsLabelCustom,
+	hiddenLoadingAnimation,
+	showCheckMessage
+} from '../../utils/loginPage/utils.js'
 import { registerNewUser } from '../../api/loginPage/post/registerNewUser.js'
 import { getCategories } from '../../api/loginPage/get/getCategories.js'
 import { loginUser } from '../../api/loginPage/post/loginUser.js'
@@ -64,6 +70,7 @@ export const selectOptionsCategory = async (
 					dateOfBirthInput.required = false
 					personalIdentification.textContent = 'CNPJ'
 					personalIdentificationInput.maxLength = 14
+					personalIdentificationInput.minLength = 14
 
 					inputsRegister.forEach((inputs) => {
 						inputs.value = ''
@@ -73,6 +80,7 @@ export const selectOptionsCategory = async (
 					dateOfBirthInput.style.display = 'block'
 					labelDateOfBirthInput.style.display = 'block'
 					dateOfBirthInput.required = true
+					personalIdentificationInput.minLength = 11
 					personalIdentificationInput.maxLength = 11
 				}
 			})
@@ -105,8 +113,12 @@ export const getDataCategories = async () => {
 	try {
 		const dataCategories = await getCategories()
 
-		if (dataCategories.status_code == 200) {
-			const categories = dataCategories.categorias
+		if (!dataCategories) {
+			return false
+		}
+
+		if (data.status_code == 200) {
+			const categories = data.categorias
 
 			return categories
 		}
@@ -115,20 +127,37 @@ export const getDataCategories = async () => {
 	}
 }
 
-export const validateResponseRegister = async (personalIdentification) => {
+export const validateResponseRegister = async (personalIdentification, checkMessageContainer) => {
 	try {
 		const categories = await getDataCategories()
+
+		if (!categories) {
+			hiddenLoadingAnimation()
+			showCheckMessage(checkMessageContainer, 'server_error')
+
+			return
+		}
 
 		if (personalIdentification.length === 14) {
 			for (const category of categories) {
 				if (category.nome_categoria === 'ONG') {
 					const response = await registerNewUser('', personalIdentification, category.id)
 
+					hiddenLoadingAnimation()
+
 					if (response.status === 201) {
+						showCheckMessage(checkMessageContainer, 'sucess_created')
 						window.location.reload()
+
+						return
+					} else if (response.status === 400) {
+						showCheckMessage(checkMessageContainer, 'invalid_fields')
+
 						return
 					} else {
-						return false
+						showCheckMessage(checkMessageContainer, 'server_error')
+
+						return
 					}
 				}
 			}
@@ -137,43 +166,73 @@ export const validateResponseRegister = async (personalIdentification) => {
 				if (category.nome_categoria === 'TUTOR') {
 					const response = await registerNewUser(personalIdentification, '', category.id)
 
+					hiddenLoadingAnimation()
+
 					if (response.status === 201) {
+						showCheckMessage(checkMessageContainer, 'sucess_created')
 						window.location.reload()
+
+						return
+					} else if (response.status === 400) {
+						showCheckMessage(checkMessageContainer, 'invalid_fields')
+
 						return
 					} else {
-						return false
+						showCheckMessage(checkMessageContainer, 'server_error')
+
+						return
 					}
 				}
 			}
 		} else {
-			return false
+			showCheckMessage(checkMessageContainer, 'invalid_fields')
+
+			return
 		}
 	} catch (error) {
+		showCheckMessage(checkMessageContainer, 'server_error')
 		return error
 	}
 }
 
-export const formatDate = (date) => {
-	try {
-		const [dia, mes, ano] = date.split('/')
-		const acceptDate = `${ano}-${mes}-${dia}`
-
-		return acceptDate ? acceptDate : false
-	} catch (error) {
-		return false
+export const validateRegisterMandatoryFields = (isValid, checkMessageContainer) => {
+	if (!isValid) {
+		showCheckMessage(checkMessageContainer, 'mandatory_fields')
 	}
+}
+
+export const formatDate = (date) => {
+	const [dia, mes, ano] = date.split('/')
+	const acceptDate = `${ano}-${mes}-${dia}`
+
+	return acceptDate ? acceptDate : false
 }
 
 export const validateLoginUser = async () => {
 	try {
 		const responseLogin = await loginUser()
 
-		if (responseLogin.status_code === 200) {
+		if (!responseLogin) {
+			showCheckMessage(checkMessageContainer, 'server_error')
+
+			return
+		}
+
+		if (responseLogin.status === 200) {
 			window.location.href = '#'
+
+			return
+		} else if (responseLogin.status === 401) {
+			showCheckMessage(checkMessageContainer, 'unauthorized_login')
+
+			return
 		} else {
-			return false
+			showCheckMessage(checkMessageContainer, 'server_error')
+
+			return
 		}
 	} catch (error) {
-		return false
+		showCheckMessage(checkMessageContainer, 'server_error')
+		return error
 	}
 }

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./src/styles/base.css">
     <link rel="stylesheet" href="./src/styles/layout/loginPage/loginLayout.css">
     <link rel="stylesheet" href="./src/styles/components/loginPage/loginComponents.css">
+    <link rel="stylesheet" href="./src/styles/devices/loginPage/mobileLayout.css">
+    <link rel="stylesheet" href="./src/styles/devices/loginPage/mobile.css">
     <title>Entre na sua conta!</title>
 </head>
 
@@ -52,6 +54,20 @@
                         </div>
 
                         <button type="submit" id="login_btn">Entrar</button>
+                        <div class="check_message" id="unauthorized_login">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="20" height="20" fill="url(#pattern0_252_3)" />
+                                <defs>
+                                    <pattern id="pattern0_252_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_252_3" transform="scale(0.01)" />
+                                    </pattern>
+                                    <image id="image0_252_3" width="100" height="100" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                            <p>Email ou senha invalidos!</p>
+                        </div>
 
                         <a href="#">Esqueceu a senha?</a>
                     </form>
@@ -117,8 +133,8 @@
                                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAABGRJREFUeAHtnDmr1UAYhl8FBe1EUEQFRbFQOwuXQkTBQsTW1sLCxgX0D4jaCO5L4x8QrRQ3cCv8A4JL4VbZirigFq4vJ2dxcuZ8M7mT3Cxv4HKTzJf5Zp53vslJMjOANhEQAREQAREQAREQAREQAREQAREQAREQAREQAREQAREQAREQAREQARGYRGAtgLMAngP4CuCP/qIYkBnZkSFZFt5mA7gE4JcEiBJgUoP9CeACALKN2njBQwmRTAhXpAexojAy3Ex0nJbJ+dAQYT/H0JIA5TIg4zUhopyTGJU1xtMhgryQIJUJ8ixEkC8SpDJBPocIontHufcOl6+piXuBjssVSILUrEuWIBKk3JBvepeqCFGEDCPkI4AzALYDWJS9z5kPYBuAmzUDVVXkTVuEXAcwz/B+tIOiGEiGrTllC7kLYKbpuWcwF8AOAC87Io6JJaUQzOs7gBWm17zBQgCfOiBKvubOmdSC3HDyjzk8IUHSd1n7YxRwbHmzT91A6pafU+X8YeoC78q7CD6zPIEgtwEsDvZY3HAJgDsFymt6TC3IFtOj34CVnGp5mEdV29IC5TXLNlUA7vU7TY9+A369dPOLPZYgDsS9ft5mCsWMFcC1ZzdShSiMDv68d/1bxyYEK4PY9FOmR7/B8QIVjC3fdNv7a5+lpC7gE9Oj3+CxBIkPOUvAK37eZspVCZJekHUmdr/BbglSL0G2SpD0ghz2B4CZckyCpBfkQ8FR33xt8i2BIHpSHwPxqRkL/xvMAPB+TD7WD4hx6VU8g/RL34gn9T6koHGsWc3WJxKDviWIB+ajwI9UjI6UUyH0pO4RhK2Vk1UI3Lcx7eSE6/vR1qb/PhaD82VXds/AU36HaWX7r1v+eQrOmbILfMDxN3p4UIKM4ujtT6cghyRI9YLsy7scnGFa2Q2ibvkPKu/bKbPAnA+xzOcYAD/Zdm1+ygQcvaSyBHkFYIPpHdgE4HXCSLlV4Td1vhWI5Wciic3Qsn/7r9XzfdYc0/PQgLZHALwrUEG3PHowBPA7+5zJT7ChIxaHcgz3eC3zuJfl6cIOOe60IFz14VrBl4lDGcbvccADxwdT7BAh+jbsRqoQhe+xajUM6A2AjeNZJj3Lewy7wT7wpv834RSpIBdXWWDmnM6AvtoyfdukEisIB1OvNHNNb7AKwI8WRIpJJlaQi2aO5RlcliD5vntzebzNnDlMNbYB1c3erGRsga1ZUabDKRhwOlxseetmb1a/bgVue3kkSM2iSoJIkOb382V2m4oQRYgiZFKEmRHCj0iTMlBaOj6c9m1ubXlH1ISGE7TEH1dgbkJl2lDGoNllWia2mgbJZWJXm/1VZsARhm1ogXWuA5fjDd641DiXw65zhZpctvsAZgWrkRlSFC6HrVWu0zVMsmRkRIsxKh6nEXAFZv4i6NqYqRRRSGZkxxt48D1jVADti4AIiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIdIXAXwXwQ8a0/uxmAAAAAElFTkSuQmCC" />
                                 </defs>
                             </svg>
-                            <input type="text" id="input_doc" name="register" inputmode="numeric" maxlength="11" placeholder=""
-                                autocomplete="off" required>
+                            <input type="text" id="input_doc" name="register" inputmode="numeric" maxlength="11" minlength="10"
+                                placeholder="" autocomplete="off" required>
                             <label for="input_doc">CPF</label>
                         </div>
                         <div class="inputs">
@@ -133,8 +149,8 @@
                                         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2klEQVR4nO2cPW4CMRBGvyrkCGHDERPosjlhCBXJUSJotnKE5CIFKVx4ftbvSV+DRov8GM2KKSwBAAAAAAAAAMCNR0kHSSdJV0llpblK+pS0l7Sx/ul3kr4DSCjG+apnN+vkESWXP7JNOvsQ4LDFOa8Wok8BDlqcc7QQfQlw0OKcm4Pu/Pfla6V4nRfRQnQP6GgjEG0Eoo1AtBGINgLRRiDaCEQbgehRRY+W7ngfsAQJooVoeXchHS1/cYwO+UtlRgvR7h1X6Gi5SxpqdCyS3iRNNXP9LEt9GtHznWfPierTiN7eefZTovo0oqc7z35OVJ96dLwnqk8jeqmHa3lZRapPI7okD6KFaHl3IR0tf3GMDvlLZUZrQNHRdhHLWncd0XYRc+f67mTZRWw713cnyy5i6lzfnbXuLubG+u5k2UUs7Dq0irh19GjpjvcBS5AgWoiWdxfS0fIXl2Z0RNtFLI31aURH20XMjfVpREfbRWwb69OIjraLmBrr04iOtouYG+vTiI62i1ga69OIHi3d8T5gCRJEayWiuY5N+rEQzQWDsrlgcB9gPhbnvFiI3tSLUMugOUt6kBG7QWWf679LUzb11tnjyl+QF0kfdVyYdTIAAAAAAAAAgALzCyME6hDPk/p6AAAAAElFTkSuQmCC" />
                                 </defs>
                             </svg>
-                            <input type="text" id="input_date_of_birth" name="register" inputmode="numeric" maxlength="10" placeholder=""
-                                autocomplete="off" required>
+                            <input type="text" id="input_date_of_birth" name="register" inputmode="numeric" maxlength="10" minlength="10"
+                                placeholder="" autocomplete="off" required>
                             <label for="input_date_of_birth">Data de nascimento</label>
                         </div>
                         <div class="dropdown">
@@ -171,8 +187,67 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" id="register_btn">Cadastrar</button>
-
+                        <button type="submit" id="register_btn">
+                            <div>
+                                <p>Cadastrar</p>
+                            </div>
+                        </button>
+                        <div class="check_message" id="sucess_created">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="20" height="20" fill="url(#pattern0_251_3)" />
+                                <defs>
+                                    <pattern id="pattern0_251_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_251_3" transform="scale(0.01)" />
+                                    </pattern>
+                                    <image id="image0_251_3" width="100" height="100" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                            <p>Cadastro realizado com sucesso!</p>
+                        </div>
+                        <div class="check_message" id="server_error">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="20" height="20" fill="url(#pattern0_252_3)" />
+                                <defs>
+                                    <pattern id="pattern0_252_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_252_3" transform="scale(0.01)" />
+                                    </pattern>
+                                    <image id="image0_252_3" width="100" height="100" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                            <p>Não foi possível concluir a operação! Tente novamente mais tarde!</p>
+                        </div>
+                        <div class="check_message" id="invalid_fields">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="20" height="20" fill="url(#pattern0_252_3)" />
+                                <defs>
+                                    <pattern id="pattern0_252_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_252_3" transform="scale(0.01)" />
+                                    </pattern>
+                                    <image id="image0_252_3" width="100" height="100" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                            <p>Os campos não foram preenchidos corretamente ou não coincidem!</p>
+                        </div>
+                        <div class="check_message" id="mandatory_fields">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="20" height="20" fill="url(#pattern0_252_3)" />
+                                <defs>
+                                    <pattern id="pattern0_252_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_252_3" transform="scale(0.01)" />
+                                    </pattern>
+                                    <image id="image0_252_3" width="100" height="100" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                            <p>Todos os campos são obrigatórios!</p>
+                        </div>
                     </form>
                 </div>
             </section>

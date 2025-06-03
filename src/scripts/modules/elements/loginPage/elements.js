@@ -28,7 +28,8 @@ export function loginPageElements() {
 		dateOfBirthInput: document.getElementById('input_date_of_birth'),
 		labelDateOfBirthInput: document.querySelectorAll('label[for="input_date_of_birth"]')[0],
 		emailUser: document.getElementById('input_email'),
-		passwordUser: document.getElementById('input_password')
+		passwordUser: document.getElementById('input_password'),
+		checkMessageContainer: document.querySelectorAll('.check_message')
 	}
 
 	return elements

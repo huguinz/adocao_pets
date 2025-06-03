@@ -26,6 +26,6 @@ export const loginUser = async () => {
 
 		return response
 	} catch (error) {
-		return error
+		return false
 	}
 }

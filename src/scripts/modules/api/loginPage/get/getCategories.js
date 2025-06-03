@@ -1,9 +1,12 @@
 'use strict'
 
 export const getCategories = async () => {
-	const url = 'http://10.107.134.42:8080/v1/controle-pet/categoria'
-	const response = await fetch(url)
-	const data = await response.json()
+	try {
+		const url = 'http://10.107.134.42:8080/v1/controle-pet/categoria'
+		const response = await fetch(url)
 
-	return data
+		return response
+	} catch (error) {
+		return false
+	}
 }

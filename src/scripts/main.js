@@ -1,12 +1,14 @@
 'use strict'
 
 import { loginPageElements } from './modules/elements/loginPage/elements.js'
+import { loadingAnimation, clearCheckMessage, showCheckMessage } from './modules/utils/loginPage/utils.js'
 import {
 	addOrRemoveMoveClass,
 	selectOptionsCategory,
 	validateInputDataValue,
 	validateResponseRegister,
-	validateLoginUser
+	validateLoginUser,
+	validateRegisterMandatoryFields
 } from './modules/controller/loginPage/controller.js'
 
 const setPageStatus = () => {
@@ -59,21 +61,31 @@ const setPageStatus = () => {
 	})
 })()
 ;(async function sendRegisterForm() {
-	const { formRegister, personalIdentificationInput } = loginPageElements()
+	const { formRegister, personalIdentificationInput, registerButton, checkMessageContainer } = loginPageElements()
+	const isValid = formRegister.checkValidity()
+
+	registerButton.addEventListener('click', () => {
+		clearCheckMessage(checkMessageContainer)
+		validateRegisterMandatoryFields(isValid, checkMessageContainer)
+	})
 
 	formRegister.addEventListener('submit', async (event) => {
 		event.preventDefault()
-
 		const inputValue = personalIdentificationInput.value
 
-		await validateResponseRegister(inputValue)
+		loadingAnimation(registerButton)
+		clearCheckMessage(checkMessageContainer)
+		await validateResponseRegister(inputValue, checkMessageContainer)
 	})
 })()
 ;(async function sendUserLogin() {
 	const { formLogin } = loginPageElements()
+	const { checkMessageContainer } = loginPageElements()
 
 	formLogin.addEventListener('submit', async (event) => {
 		event.preventDefault()
+
+		clearCheckMessage(checkMessageContainer)
 
 		await validateLoginUser()
 	})
