@@ -1,0 +1,18 @@
+body {
+	background-color: var(--secondary-color);
+}
+
+.logo {
+	color: var(--logo-text-color);
+
+	&::after {
+		background-color: var(--primary-color);
+	}
+}
+
+input#search-pet {
+	background-color: transparent;
+	border: 1px solid #000;
+	outline: var(--primary-color);
+	border-radius: 36px;
+}

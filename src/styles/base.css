@@ -23,6 +23,8 @@
 	--check-sucess-message-text-color: #8ccf27;
 	--check-error-message-text-color: #ed2222;
 
+	--logo-text-color: #4e342e;
+
 	/* FONTS */
 	--font-default: 'Inter', sans-serif;
 	--secondary-font: 'Inria Sans', sans-serif;

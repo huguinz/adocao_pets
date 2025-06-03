@@ -1,0 +1,55 @@
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	all: unset;
+	height: 100%;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	align-items: center;
+	gap: 12px;
+	position: relative;
+
+	& img {
+		width: 96px;
+		height: auto;
+		user-select: none;
+	}
+
+	& p {
+		text-transform: uppercase;
+		user-select: none;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	&::after {
+		content: '';
+		height: 60%;
+		width: 1%;
+		position: absolute;
+		right: 12px;
+	}
+}
+
+.input-container {
+	width: 100%;
+	padding: 16px;
+}
+
+input#search-pet {
+	width: 100%;
+	padding: 12px;
+}
