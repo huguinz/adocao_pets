@@ -68,6 +68,20 @@
                             </svg>
                             <p>Email ou senha invalidos!</p>
                         </div>
+                        <div class="check_message" id="server_error_login">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="20" height="20" fill="url(#pattern0_252_3)" />
+                                <defs>
+                                    <pattern id="pattern0_252_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_252_3" transform="scale(0.01)" />
+                                    </pattern>
+                                    <image id="image0_252_3" width="100" height="100" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                            <p>Não foi possível concluir a operação! Tente novamente mais tarde!</p>
+                        </div>
 
                         <a href="#">Esqueceu a senha?</a>
                     </form>

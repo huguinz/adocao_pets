@@ -1,7 +1,7 @@
 'use strict'
 
 import { loginPageElements } from './modules/elements/loginPage/elements.js'
-import { loadingAnimation, clearCheckMessage, showCheckMessage } from './modules/utils/loginPage/utils.js'
+import { loadingAnimation, clearCheckMessage } from './modules/utils/loginPage/utils.js'
 import {
 	addOrRemoveMoveClass,
 	selectOptionsCategory,
@@ -64,7 +64,9 @@ const setPageStatus = () => {
 	const { formRegister, personalIdentificationInput, registerButton, checkMessageContainer } = loginPageElements()
 	const isValid = formRegister.checkValidity()
 
-	registerButton.addEventListener('click', () => {
+	registerButton.addEventListener('click', (event) => {
+		event.preventDefault()
+
 		clearCheckMessage(checkMessageContainer)
 		validateRegisterMandatoryFields(isValid, checkMessageContainer)
 	})
@@ -87,6 +89,6 @@ const setPageStatus = () => {
 
 		clearCheckMessage(checkMessageContainer)
 
-		await validateLoginUser()
+		await validateLoginUser(checkMessageContainer)
 	})
 })()

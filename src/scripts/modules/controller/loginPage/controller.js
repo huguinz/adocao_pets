@@ -117,7 +117,8 @@ export const getDataCategories = async () => {
 			return false
 		}
 
-		if (data.status_code == 200) {
+		if (dataCategories.status == 200) {
+			const data = await dataCategories.json()
 			const categories = data.categorias
 
 			return categories
@@ -147,7 +148,9 @@ export const validateResponseRegister = async (personalIdentification, checkMess
 
 					if (response.status === 201) {
 						showCheckMessage(checkMessageContainer, 'sucess_created')
-						window.location.reload()
+						setTimeout(() => {
+							window.location.reload()
+						}, 1500)
 
 						return
 					} else if (response.status === 400) {
@@ -170,7 +173,9 @@ export const validateResponseRegister = async (personalIdentification, checkMess
 
 					if (response.status === 201) {
 						showCheckMessage(checkMessageContainer, 'sucess_created')
-						window.location.reload()
+						setTimeout(() => {
+							window.location.reload()
+						}, 1500)
 
 						return
 					} else if (response.status === 400) {
@@ -208,18 +213,18 @@ export const formatDate = (date) => {
 	return acceptDate ? acceptDate : false
 }
 
-export const validateLoginUser = async () => {
+export const validateLoginUser = async (checkMessageContainer) => {
 	try {
 		const responseLogin = await loginUser()
 
 		if (!responseLogin) {
-			showCheckMessage(checkMessageContainer, 'server_error')
+			showCheckMessage(checkMessageContainer, 'server_error_login')
 
 			return
 		}
 
 		if (responseLogin.status === 200) {
-			window.location.href = '#'
+			window.location.href = '../../../../assets/pages/homePage.html'
 
 			return
 		} else if (responseLogin.status === 401) {
@@ -227,12 +232,12 @@ export const validateLoginUser = async () => {
 
 			return
 		} else {
-			showCheckMessage(checkMessageContainer, 'server_error')
+			showCheckMessage(checkMessageContainer, 'server_error_login')
 
 			return
 		}
 	} catch (error) {
-		showCheckMessage(checkMessageContainer, 'server_error')
+		showCheckMessage(checkMessageContainer, 'server_error_login')
 		return error
 	}
 }

@@ -250,6 +250,14 @@ div {
 			}
 		}
 
+		&#server_error_login {
+			bottom: 132px;
+
+			& p {
+				color: var(--check-error-message-text-color);
+			}
+		}
+
 		&#invalid_fields {
 			bottom: 82px;
 
