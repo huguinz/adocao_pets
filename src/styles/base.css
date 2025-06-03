@@ -20,6 +20,8 @@
 	--button-color: #4e342e;
 	--button-color-hover: #3d2823;
 	--dropdown-box-color: #e6e6e6;
+	--check-sucess-message-text-color: #8ccf27;
+	--check-error-message-text-color: #ed2222;
 
 	/* FONTS */
 	--font-default: 'Inter', sans-serif;

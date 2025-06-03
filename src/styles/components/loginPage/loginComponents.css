@@ -226,6 +226,52 @@ div {
 			}
 		}
 	}
+
+	&.check_message {
+		opacity: 0;
+		transition: 0.7s;
+
+		& p {
+			font-size: 0.85rem;
+			user-select: none;
+		}
+
+		&#sucess_created {
+			& p {
+				color: var(--check-sucess-message-text-color);
+			}
+		}
+
+		&#server_error {
+			bottom: 82px;
+
+			& p {
+				color: var(--check-error-message-text-color);
+			}
+		}
+
+		&#invalid_fields {
+			bottom: 82px;
+
+			& p {
+				color: var(--check-error-message-text-color);
+			}
+		}
+
+		&#mandatory_fields {
+			& p {
+				color: var(--check-error-message-text-color);
+			}
+		}
+
+		&#unauthorized_login {
+			bottom: 142px;
+
+			& p {
+				color: var(--check-error-message-text-color);
+			}
+		}
+	}
 }
 
 form {
@@ -240,6 +286,32 @@ form {
 		&:hover {
 			background-color: var(--button-box-color-hover);
 		}
+
+		&#register_btn {
+			background-color: var(--button-box-color-hover);
+
+			& div {
+				background-color: var(--button-box-color);
+
+				&:hover {
+					background-color: var(--button-box-color-hover);
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 28px;
+				height: 28px;
+				bottom: 7px;
+				right: 72px;
+				border: 3px solid black;
+				border-top: 3px solid transparent;
+				border-radius: 50%;
+				animation: loading 0.8s linear infinite;
+				z-index: -1;
+			}
+		}
 	}
 
 	& a {
@@ -249,5 +321,15 @@ form {
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
 	}
 }
