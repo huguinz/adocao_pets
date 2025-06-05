@@ -17,7 +17,7 @@ export async function registerNewUser(personalIdentificationCpf, personalIdentif
 			formatDateValue = formatDate(dateOfBirthInput)
 		}
 
-		const url = 'http://10.107.144.30:8080/v1/controle-pet/usuario'
+		const url = 'http://10.107.134.42:8080/v1/controle-pet/usuario'
 
 		const body = {
 			nome: nameUserRegister,

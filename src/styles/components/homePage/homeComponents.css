@@ -2,6 +2,12 @@ body {
 	background-color: var(--secondary-color);
 }
 
+header:has(.container) {
+	&::after {
+		background-color: var(--primary-color);
+	}
+}
+
 .logo {
 	color: var(--logo-text-color);
 
@@ -10,9 +16,70 @@ body {
 	}
 }
 
+.navigation {
+	& li {
+		text-decoration: none;
+		list-style: none;
+		border-radius: 32px;
+		background-color: var(--button-color);
+		font-size: 1.3rem;
+		color: var(--secondary-color);
+		cursor: pointer;
+		text-transform: uppercase;
+		transition: 0.2s;
+
+		&:nth-last-of-type(4) {
+			background-color: transparent;
+			border: 2px solid var(--button-color);
+			color: #000;
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
+
+		&:hover {
+			background-color: var(--button-color-hover);
+		}
+	}
+}
+
+.profile-user-photo {
+	cursor: pointer;
+}
+
+.texts {
+	& h1 {
+		font-size: 3.5rem;
+	}
+
+	& p {
+		font-size: 1.2rem;
+		width: 80%;
+	}
+}
+
+.buttons {
+	& button {
+		border: none;
+		border-radius: 32px;
+		background-color: var(--button-color);
+		color: var(--secondary-color);
+		cursor: pointer;
+		transition: 0.2s;
+		text-transform: uppercase;
+		font-size: 0.85rem;
+
+		&:hover {
+			background-color: var(--button-color-hover);
+		}
+	}
+}
+
 input#search-pet {
 	background-color: transparent;
 	border: 1px solid #000;
 	outline: var(--primary-color);
 	border-radius: 36px;
+	font-size: 1rem;
 }

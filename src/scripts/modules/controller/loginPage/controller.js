@@ -166,7 +166,7 @@ export const validateResponseRegister = async (personalIdentification, checkMess
 			}
 		} else if (personalIdentification.length === 11) {
 			for (const category of categories) {
-				if (category.nome_categoria === 'TUTOR') {
+				if (category.nome_categoria === 'Tutor') {
 					const response = await registerNewUser(personalIdentification, '', category.id)
 
 					hiddenLoadingAnimation()
@@ -202,6 +202,7 @@ export const validateResponseRegister = async (personalIdentification, checkMess
 
 export const validateRegisterMandatoryFields = (isValid, checkMessageContainer) => {
 	if (!isValid) {
+		console.log(isValid)
 		showCheckMessage(checkMessageContainer, 'mandatory_fields')
 	}
 }
@@ -224,7 +225,15 @@ export const validateLoginUser = async (checkMessageContainer) => {
 		}
 
 		if (responseLogin.status === 200) {
-			window.location.href = '../../../../assets/pages/homePage.html'
+			const userData = await responseLogin.json()
+			const idCategory = userData.resultUsuario.id_categoria
+			const idUser = userData.resultUsuario.id
+			console.log(idUser)
+
+			localStorage.setItem('x', idUser)
+			localStorage.setItem('y', idCategory)
+
+			window.location.href = '../../../../../src/assets/pages/homePage.html'
 
 			return
 		} else if (responseLogin.status === 401) {

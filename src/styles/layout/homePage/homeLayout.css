@@ -8,22 +8,38 @@ main {
 	height: 100%;
 }
 
+header:has(.container) {
+	&::after {
+		content: '';
+		height: 3px;
+		width: 100%;
+		position: absolute;
+	}
+}
+
 .container {
 	height: 100%;
 	width: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	padding: 12px;
+	position: relative;
+
+	&.main {
+		justify-content: center;
+	}
 }
 
 .logo {
 	display: flex;
 	align-items: center;
-	align-items: center;
 	gap: 12px;
 	position: relative;
+	min-width: max-content;
 
 	& img {
-		width: 96px;
+		width: 126px;
 		height: auto;
 		user-select: none;
 	}
@@ -31,25 +47,129 @@ main {
 	& p {
 		text-transform: uppercase;
 		user-select: none;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		font-weight: bold;
 	}
 
 	&::after {
 		content: '';
 		height: 60%;
-		width: 1%;
+		width: 3px;
 		position: absolute;
-		right: 12px;
+		right: -16px;
+	}
+}
+
+.navigation {
+	width: 60%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+
+	& nav {
+		width: 100%;
+		display: flex;
+		align-items: center;
+
+		& ul {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			gap: 32px;
+
+			& li {
+				padding: 14px 56px;
+
+				& svg {
+					width: 50px;
+					height: auto;
+				}
+			}
+		}
+	}
+}
+
+.profile-user-photo {
+	margin-left: 56px;
+}
+
+.presentation {
+	width: 80%;
+	height: max-content;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 96px;
+}
+
+.description {
+	width: 40%;
+	min-width: 40%;
+	display: flex;
+	flex-direction: column;
+	gap: 56px;
+}
+
+.texts {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+
+	& button {
+		padding: 16px 42px;
+	}
+}
+
+.elements {
+	width: 100%;
+	position: relative;
+
+	& img {
+		height: 140% !important;
+		width: auto !important;
+		position: absolute;
+		top: -76px;
+		left: 20%;
+	}
+}
+
+.paws_icon {
+	width: 104px;
+	height: auto;
+
+	&:nth-last-of-type(1) {
+		position: absolute;
+		right: 124px;
+		top: 0;
+	}
+
+	&:nth-last-of-type(2) {
+		position: absolute;
+		left: 124px;
+		bottom: 24px;
 	}
 }
 
 .input-container {
 	width: 100%;
 	padding: 16px;
+	margin-left: 12px;
+	position: relative;
+
+	& svg {
+		position: absolute;
+		right: 28px;
+		top: 28px;
+	}
 }
 
 input#search-pet {
 	width: 100%;
-	padding: 12px;
+	padding: 16px;
 }

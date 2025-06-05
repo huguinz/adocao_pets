@@ -10,6 +10,13 @@ import {
 	validateLoginUser,
 	validateRegisterMandatoryFields
 } from './modules/controller/loginPage/controller.js'
+import { getPets } from './modules/api/loginPage/get/getPets.js'
+
+const isLogged = localStorage.getItem('x')
+
+if (isLogged) {
+	console.log('po')
+}
 
 const setPageStatus = () => {
 	const { moveClass, unmoveClass, inputsRegister, inputsLogin } = loginPageElements()
@@ -64,9 +71,7 @@ const setPageStatus = () => {
 	const { formRegister, personalIdentificationInput, registerButton, checkMessageContainer } = loginPageElements()
 	const isValid = formRegister.checkValidity()
 
-	registerButton.addEventListener('click', (event) => {
-		event.preventDefault()
-
+	registerButton.addEventListener('click', () => {
 		clearCheckMessage(checkMessageContainer)
 		validateRegisterMandatoryFields(isValid, checkMessageContainer)
 	})
