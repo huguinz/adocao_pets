@@ -76,7 +76,7 @@
                     </div>
                     <div class="buttons">
                         <button id="register_animal">Cadastrar animal</button>
-                        <button id="about us">Animais cadastrados</button>
+                        <button id="about_us">Animais cadastrados</button>
                     </div>
                 </div>
                 <div class="elements">
@@ -128,7 +128,7 @@
                 </svg>
             </div>
         </div> -->
-        <div class="container main pets_page">
+        <!-- <div class="container main pets_page">
             <h1>Pets cadastrados</h1>
             <div id="pets">
                 <div class="pet">
@@ -171,6 +171,122 @@
                     <img src="../img/image.png" alt="pet image">
                     <button title="Mais informações">Mais informações</button>
                 </div>
+            </div>
+        </div> -->
+        <div class="container main register_pets_page">
+            <h1>Cadastre um novo pet</h1>
+            <div class="form">
+                <form id="register_pet">
+                    <div class="primary_info">
+                        <div class="preview register_pet_input">
+                            <input class="preview-input" name="register_pet" id="photo" type="file" accept="image/*" required>
+                            <label class="preview-label" for="photo">
+                                <div class="present_preview">
+                                    <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="200" height="200" fill="url(#pattern0_337_99)" />
+                                        <defs>
+                                            <pattern id="pattern0_337_99" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_337_99" transform="scale(0.01)" />
+                                            </pattern>
+                                            <image id="image0_337_99" width="100" height="100" preserveAspectRatio="none"
+                                                xlink:href="data:image/png;base64,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" />
+                                        </defs>
+                                    </svg>
+                                    <p class="name_input" style="font-size: 1.8rem; text-align: center;">Carregar foto do pet</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="name container_input">
+                            <label for="name" class="name_input">Nome</label>
+                            <input type="text" name="register_pet" id="name" class="register_pet_input" required>
+                        </div>
+                        <div class="age container_input">
+                            <label for="age" class="name_input">Idade</label>
+                            <input type="text" name="register_pet" id="age" class="register_pet_input" required>
+                        </div>
+                    </div>
+                    <div class="secondary_info">
+                        <div class="desc container_input">
+                            <label for="desc" class="name_input">Descrição</label>
+                            <textarea type="text" name="register_pet" id="desc" class="register_pet_input" required></textarea>
+                        </div>
+                        <div class="drops">
+                            <div class="species container_input">
+                                <label for="species" class="name_input">Espécie</label>
+                                <select name="register_pet" id="species" class="register_pet_input" required>
+                                    <option value="Cachorro">Cachorro</option>
+                                    <option value="Gato">Gato</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="gender container_input">
+                                <label for="gender" class="name_input">Sexo</label>
+                                <select name="register_pet" id="gender" class="register_pet_input" required>
+                                    <option value="Macho">Macho</option>
+                                    <option value="Femea">Fêmea</option>
+                                </select>
+                            </div>
+                            <div class="breed container_input">
+                                <label for="breed" class="name_input">Raça</label>
+                                <select name="register_pet" id="breed" class="register_pet_input" required></select>
+                            </div>
+                            <div class="status container_input">
+                                <label for="status" class="name_input">Status</label>
+                                <select name="register_pet" id="status" class="register_pet_input" required>
+                                    <option value="Saudável">Saudável</option>
+                                    <option value="Doente">Portador de necessidades especiais</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="vaccine container_input">
+                            <p class="name_input">Vacinas</p>
+                            <div class="options">
+                                <div>
+                                    <label for="opt1" class="name_input">V8</label>
+                                    <input type="checkbox" id="opt1" name="register_pet" required>
+                                </div>
+                                <div>
+                                    <label for="opt2" class="name_input">V10</label>
+                                    <input type="checkbox" id="opt2" name="register_pet" required>
+                                </div>
+                                <div>
+                                    <label for="opt3" class="name_input">Gripe canina</label>
+                                    <input type="checkbox" id="opt3" name="register_pet" required>
+                                </div>
+                                <div>
+                                    <label for="opt4" class="name_input">Antirrábica</label>
+                                    <input type="checkbox" id="opt4" name="register_pet" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="temperament container_input">
+                            <label for="temperament" class="name_input">Temperamento</label>
+                            <select name="register_pet" id="temperament" class="register_pet_input" required>
+                                <option value="Saudável">Calmo</option>
+                                <option value="Doente">Agressivo</option>
+                            </select>
+                        </div>
+                        <div class="telephone container_input">
+                            <label for="telephone" class="name_input">Contato do dono</label>
+                            <input type="number" name="register_pet" id="telephone" class="register_pet_input" maxlength="11" required>
+                        </div>
+                        <button id="send_register_pet">
+                            <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="74" height="74" fill="url(#pattern0_338_110)" />
+                                <defs>
+                                    <pattern id="pattern0_338_110" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_338_110" transform="scale(0.0078125)" />
+                                    </pattern>
+                                    <image id="image0_338_110" width="128" height="128" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                            <p>Cadastrar</p>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
