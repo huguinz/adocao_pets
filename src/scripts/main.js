@@ -1,6 +1,7 @@
 'use strict'
 
 import { loginPageElements } from './modules/elements/loginPage/elements.js'
+import { homePageElements } from './modules/elements/homePage/elements.js'
 import { loadingAnimation, clearCheckMessage } from './modules/utils/loginPage/utils.js'
 import {
 	addOrRemoveMoveClass,
@@ -10,90 +11,98 @@ import {
 	validateLoginUser,
 	validateRegisterMandatoryFields
 } from './modules/controller/loginPage/controller.js'
-import { getPets } from './modules/api/loginPage/get/getPets.js'
+import { validateSpecie } from './modules/controller/homePage/controller.js'
 
 const isLogged = localStorage.getItem('x')
 
 if (isLogged) {
-	console.log('po')
-}
+	const setPageStatus = () => {
+		const { moveClass, unmoveClass, inputsRegister, inputsLogin } = loginPageElements()
 
-const setPageStatus = () => {
-	const { moveClass, unmoveClass, inputsRegister, inputsLogin } = loginPageElements()
+		addOrRemoveMoveClass(moveClass, unmoveClass, inputsRegister, inputsLogin)
+	}
 
-	addOrRemoveMoveClass(moveClass, unmoveClass, inputsRegister, inputsLogin)
-}
+	;(function toggleLogin() {
+		const { toggleFormButton } = loginPageElements()
+		toggleFormButton.forEach((item) => {
+			item.addEventListener('click', setPageStatus)
+		})
+	})()
+	;(function selectCategory() {
+		const {
+			optionsInputRegister,
+			optionsCheckbox,
+			optionsContainer,
+			personalIdentification,
+			personalIdentificationInput,
+			dateOfBirthInput,
+			labelDateOfBirthInput,
+			inputsRegister
+		} = loginPageElements()
 
-;(function toggleLogin() {
-	const { toggleFormButton } = loginPageElements()
-	toggleFormButton.forEach((item) => {
-		item.addEventListener('click', setPageStatus)
-	})
-})()
-;(function selectCategory() {
-	const {
-		optionsInputRegister,
-		optionsCheckbox,
-		optionsContainer,
-		personalIdentification,
-		personalIdentificationInput,
-		dateOfBirthInput,
-		labelDateOfBirthInput,
-		inputsRegister
-	} = loginPageElements()
-
-	optionsInputRegister.forEach((item) => {
-		item.addEventListener('change', () =>
-			selectOptionsCategory(
-				item,
-				optionsCheckbox,
-				optionsContainer,
-				personalIdentification,
-				personalIdentificationInput,
-				dateOfBirthInput,
-				labelDateOfBirthInput,
-				inputsRegister
+		optionsInputRegister.forEach((item) => {
+			item.addEventListener('change', () =>
+				selectOptionsCategory(
+					item,
+					optionsCheckbox,
+					optionsContainer,
+					personalIdentification,
+					personalIdentificationInput,
+					dateOfBirthInput,
+					labelDateOfBirthInput,
+					inputsRegister
+				)
 			)
-		)
-	})
-})()
-;(function callValidateInputDataValue() {
-	const { dateOfBirthInput } = loginPageElements()
+		})
+	})()
+	;(function callValidateInputDataValue() {
+		const { dateOfBirthInput } = loginPageElements()
 
-	dateOfBirthInput.addEventListener('input', () => {
-		let valueDate = dateOfBirthInput.value
-		const validateDate = validateInputDataValue(valueDate)
+		dateOfBirthInput.addEventListener('input', () => {
+			let valueDate = dateOfBirthInput.value
+			const validateDate = validateInputDataValue(valueDate)
 
-		valueDate = dateOfBirthInput.value = validateDate
-	})
-})()
-;(async function sendRegisterForm() {
-	const { formRegister, personalIdentificationInput, registerButton, checkMessageContainer } = loginPageElements()
-	const isValid = formRegister.checkValidity()
+			valueDate = dateOfBirthInput.value = validateDate
+		})
+	})()
+	;(async function sendRegisterForm() {
+		const { formRegister, personalIdentificationInput, registerButton, checkMessageContainer } = loginPageElements()
+		const isValid = formRegister.checkValidity()
 
-	registerButton.addEventListener('click', () => {
-		clearCheckMessage(checkMessageContainer)
-		validateRegisterMandatoryFields(isValid, checkMessageContainer)
-	})
+		registerButton.addEventListener('click', () => {
+			clearCheckMessage(checkMessageContainer)
+			validateRegisterMandatoryFields(isValid, checkMessageContainer)
+		})
 
-	formRegister.addEventListener('submit', async (event) => {
-		event.preventDefault()
-		const inputValue = personalIdentificationInput.value
+		formRegister.addEventListener('submit', async (event) => {
+			event.preventDefault()
+			const inputValue = personalIdentificationInput.value
 
-		loadingAnimation(registerButton)
-		clearCheckMessage(checkMessageContainer)
-		await validateResponseRegister(inputValue, checkMessageContainer)
-	})
-})()
-;(async function sendUserLogin() {
-	const { formLogin } = loginPageElements()
-	const { checkMessageContainer } = loginPageElements()
+			loadingAnimation(registerButton)
+			clearCheckMessage(checkMessageContainer)
+			await validateResponseRegister(inputValue, checkMessageContainer)
+		})
+	})()
+	;(async function sendUserLogin() {
+		const { formLogin } = loginPageElements()
+		const { checkMessageContainer } = loginPageElements()
 
-	formLogin.addEventListener('submit', async (event) => {
-		event.preventDefault()
+		formLogin.addEventListener('submit', async (event) => {
+			event.preventDefault()
 
-		clearCheckMessage(checkMessageContainer)
+			clearCheckMessage(checkMessageContainer)
 
-		await validateLoginUser(checkMessageContainer)
-	})
-})()
+			await validateLoginUser(checkMessageContainer)
+		})
+	})()
+} else {
+	;(function getSpecie() {
+		const { selectSpecie, vaccineOption1, vaccineOption2, vaccineOption3, vaccineOption4 } = homePageElements()
+
+		const optionValues = [vaccineOption1, vaccineOption2, vaccineOption3, vaccineOption4]
+
+		selectSpecie.addEventListener('change', () => {
+			validateSpecie(selectSpecie, optionValues)
+		})
+	})()
+}
