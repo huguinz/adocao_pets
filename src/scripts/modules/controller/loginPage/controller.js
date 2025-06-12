@@ -228,7 +228,6 @@ export const validateLoginUser = async (checkMessageContainer) => {
 			const userData = await responseLogin.json()
 			const idCategory = userData.resultUsuario.id_categoria
 			const idUser = userData.resultUsuario.id
-			console.log(idUser)
 
 			localStorage.setItem('x', idUser)
 			localStorage.setItem('y', idCategory)

@@ -313,6 +313,10 @@ header:has(.pets_page) {
 	}
 }
 
+#breed {
+	margin-top: 8px;
+}
+
 input#search-pet {
 	width: 100%;
 	padding: 16px;

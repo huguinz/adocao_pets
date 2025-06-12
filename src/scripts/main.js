@@ -11,7 +11,7 @@ import {
 	validateLoginUser,
 	validateRegisterMandatoryFields
 } from './modules/controller/loginPage/controller.js'
-import { validateSpecie } from './modules/controller/homePage/controller.js'
+import { validateSpecie, validateBreed, savePhoto } from './modules/controller/homePage/controller.js'
 
 const isLogged = localStorage.getItem('x')
 
@@ -96,6 +96,13 @@ if (isLogged) {
 		})
 	})()
 } else {
+	;(async function defaultBreeds() {
+		let { selectSpecie } = homePageElements()
+		selectSpecie = selectSpecie.value
+		selectSpecie = selectSpecie.toUpperCase()
+
+		await validateBreed(selectSpecie)
+	})()
 	;(function getSpecie() {
 		const { selectSpecie, vaccineOption1, vaccineOption2, vaccineOption3, vaccineOption4 } = homePageElements()
 
@@ -103,6 +110,13 @@ if (isLogged) {
 
 		selectSpecie.addEventListener('change', () => {
 			validateSpecie(selectSpecie, optionValues)
+		})
+	})()
+	;(async function sendPetRegister() {
+		const { petForm, animalPhoto } = homePageElements()
+
+		petForm.addEventListener('submit', async () => {
+			await savePhoto(animalPhoto)
 		})
 	})()
 }

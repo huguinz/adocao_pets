@@ -145,6 +145,7 @@ header:has(.container) {
 	font-size: 1.2rem;
 	color: var(--logo-text-color);
 	font-weight: bold;
+	user-select: none;
 }
 
 #send_register_pet {
