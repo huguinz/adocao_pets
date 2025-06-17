@@ -124,6 +124,40 @@ header:has(.container) {
 	}
 }
 
+.pet_info {
+	border-radius: 12px !important;
+	overflow: hidden;
+}
+
+.container_pet_info {
+	background-color: var(--primary-color);
+}
+
+.pet_desc {
+	& h1 {
+		text-align: center;
+		font-size: 2.3rem !important;
+		color: #fff !important;
+	}
+}
+
+.pet_form {
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.text_field {
+	background-color: var(--logo-text-color);
+	border-radius: 8px;
+	box-shadow: 3px 3px 5px var(--shadow-effect-color);
+	font-weight: normal;
+	text-transform: none;
+	text-align: center;
+	font-size: 1rem;
+}
+
 .preview {
 	border-radius: 12px;
 }

@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <!-- <div class="container inicial_page">
+        <div class="container inicial_page">
             <div class="logo">
                 <img src="../img/logo.png" alt="Logo Lar de pets" draggable="false">
                 <p>Lar de Patas</p>
@@ -41,8 +41,28 @@
                     </div>
                 </nav>
             </div>
-        </div> -->
+        </div>
         <div class="container pets_page">
+            <div class="logo">
+                <img src="../img/logo.png" alt="Logo Lar de pets" draggable="false">
+                <p>Lar de Patas</p>
+            </div>
+            <div class="input-container">
+                <input type="text" name="search" id="search-pet" placeholder="Pesquise por um pet cadastrado">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="25" height="25" fill="url(#pattern0_379_5)" />
+                    <defs>
+                        <pattern id="pattern0_379_5" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_379_5" transform="scale(0.01)" />
+                        </pattern>
+                        <image id="image0_379_5" width="100" height="100" preserveAspectRatio="none"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAABwlJREFUeAHtncfLNEUQxh8xXlQUz4oRBHPOijcVRQyomD4RFdNBPIiIATNiuBkOKgZEUS/m7MWL2X9AMSuYs4JpfzDLVxQ9+87svjtT09MFy9vvbM90VT3TqUKvVKhooGigaKBooGigaKBooGggbw1sL+l0STdIelzSB5P/P5T0vaS/qg9lrvEddah7miTuLbSgBjaSdIKkByR9Jum/BT+fVs86XtKGC/I2qtv3kHR39eYvCkLd/fSkuyTtPirNthT2QElPS/p3wZ5QB0Ld9TckHd6S16yrbyvpuQYg/CLp+WpeOGNS3lfSNpI2k7RB9aHMNb47s6rLPb82eP4z1b1ZK3uWcCjxakl/zFDWl5JulUTvWX/Ww1b4jnt5xm2SeGZdb/l90kOvqsBd4ZF5fc1b/PYMxbwq6QhJ6y5BbJ55pCTaqAPmrckCYOsltB3ykcdJ+rFGGS9Ww01XjO8/6Tkv1/Dyw2T5fGxXjPTVzkWS/kko4AtJzAt90dGSPknwxQLj0r6YWma761QTbGqIeHgytm+8zMYbPnsTSY8kQIHn6yUhQzbEjtmDwQR6dkAJz61ZaABKFnRBAgzG54MDS7efpG8TfF8SmOdGrDGB+znjK0m7NLq730rwCK+2ZyPLYCf6rSR95wRidbVbv3pu1fpOCRMOvXtwS2I2fX6fwZwReZiqQ+rQxJzy5tA2j9e4nkG3jziB14Hgr5+XkOdKXynq/9imvDnk0ajMtuDrIQcKPR6LQ3jyhkJ8GRH2GYsqjn3K5w4UrNOhCVOEXZVQxiGUC52UkA+jZVjC1G0BwTaVG73iZHw2qoB4+iwYlNlg5UYHODmxd4X0POJ2tYDwJuVKrztZ74wmKAEJ+KktIPgzciX8KVZWNsChAidOdAzilVuGcykKwOslzCqYicLQgw6QW8JwtjxGbncy37e8pto/2cdNMfHlTpiB7LD1cRSBd3CMER2ySEBCFLlW4gN7nY9mwUrROxHead8U9iJjIfZZVvZTIwjuvYHZeNYaKPcmB8i1De5ZepUnHFP0mLHQGif7YxEEf98xRdTgWMjb7t6NIDirCzuO4ikcC+E5tLJ/FEFw76bdPAJTHfGwhQPkm47andkMyTL2LWE5OBbCXGJl/zOC4AWQtaCgi96pDFlrASGWq3ca86SOT90OWSHMJ37Zm6NTqu6t986qd+oqdnndbwz7jGLvUm7aOsv1kBAbQ0wltttiShkL3exkvzGC4N64+EIEpjri4SUHSAjjIkn5tof8NrQwyznBS5nfw1gpSMq3oISOVZoTAH/bIU5mssDCEKctWEDInM2d7nAyo4MwxBEYFpAxBDl87WQ+JgwaVQiMDwMiVCZXOsqB8bMkQqFCkQ+UIw88V/KBcvdEFJRwSn9OCQ6c3IgFix2eKe8cVUifikBSfm70mgMk9EiAHcu/PUQ15kKnJOQLv8TnVB0LCkkuJLsMnTaVxF7DyvbUEITCJE26l2WcExKGThgOrUx4B3ccilAccWSZp3zOUJhP8Hl+Qp4rEvXCXsLOwxFHFhQSQTE3DI0Ok0RvsLK8N8Rw2S0TBwf8FDXbqOYtYTnrN7xsAgczVHm5OIZiqEdr7JrIAWGfFcpE4hXe5P+LXXen63M8ReThi2Eqdcgai5WDmggdvY73KgIKcwpHIUUjJnA/Z9j5gyEr/N5jJaVy+FcKFARlSRxhn8I+wy9tLRC2nAUogHZhYk5BUMz1fQZHcMSfd7JZAFJlknUY2gZPTPTMISkhSaXuMh2OocfbplJ81V2jp3TJ79LAJ2qcI47qBEVJ+FOWkclLBi3+DG9Ct7wQa0Zqnr1WV84GFDaPHHHkzSxWcE50I9uVBMtFgri5l1Udblfv6bPtMZlfPpnvAI3VFMq239eV2V9l42rA9sWpOnXCTq8TzUJOH2lkBKihAO4l/QGF86HMNb6jDnUJ1eHe6XPq/j4paTs3JowWFPTAWMxBLt7JVafA1bhOW/hwZu0tmGdG2VOmLyeeR84O8VH1qwHA9BmYQ2ij6WGcbUHJMr6ZZBiOq7hfko+wnyq2zV98GfdW53fNE5BAD27TU7IEZdpr+EtSPqGa11UbOBIs+XkjehKJMn9XhkAcYhzASRA4R3ycnJgb7HPblAGFCbzJi4DpZUwJsG30uKp1WTA0BYV62feUVdXunA/bM2GWr+s1pafMqeS2txVQ2mqsg/oFlA6U3LaJAkpbjXVQH1Ca7pvKnNIBIDTBqaxtQNmnI75G3UwBJSD8BZQCSkANBGSp9JSAoGC5bjrR49beO6AM2bFUQAkIaQElICh7tTBIXhaQ/yxZoqekfh/RWor5Be1CHWqAnw2sA6WA0SEQtqkUKAUMq6EeyhaUAkYPAKSaZPNYJvCUZsq1ooGigaKBooGigaKBooFONfA/awxDkzNRgaoAAAAASUVORK5CYII=" />
+                    </defs>
+                </svg>
+            </div>
+        </div>
+        <div class="container register_pets_page">
             <div class="logo">
                 <img src="../img/logo.png" alt="Logo Lar de pets" draggable="false">
                 <p>Lar de Patas</p>
@@ -64,7 +84,7 @@
         </div>
     </header>
     <main>
-        <!-- <div class="container main inicial_page">
+        <div class="container main inicial_page">
             <div class="presentation">
                 <div class="description">
                     <div class="texts">
@@ -76,11 +96,11 @@
                     </div>
                     <div class="buttons">
                         <button id="register_animal">Cadastrar animal</button>
-                        <button id="about_us">Animais cadastrados</button>
+                        <button id="registered_animal">Animais cadastrados</button>
                     </div>
                 </div>
                 <div class="elements">
-                    <img src="../img/foto-home.png" alt="Foto apresentação" id="teste">
+                    <img src="../img/foto-home.png" alt="Foto apresentação">
                 </div>
                 <svg width="191" height="178" viewBox="0 0 191 178" fill="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" class="paws_icon">
@@ -127,52 +147,112 @@
                     </defs>
                 </svg>
             </div>
-        </div> -->
-        <!-- <div class="container main pets_page">
+        </div>
+        <div class="container main pets_page">
             <h1>Pets cadastrados</h1>
             <div id="pets">
                 <div class="pet">
                     <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
+                    <button title="Mais informações" class="more_info">Mais informações</button>
+                    <div class="pet_info">
+                        <div class="container_pet_info">
+                            <img src="../img/image.png" alt="pet image">
+                            <div class="pet_desc">
+                                <h1>Nome do pet</h1>
+                                <div class="pet_form">
+                                    <div class="pet_name">
+                                        <p>Nome:</p>
+                                        <p class="text_field">Nome do pet</p>
+                                    </div>
+                                    <div class="row_info">
+                                        <div class="pet_age">
+                                            <p>Idade:</p>
+                                            <p class="text_field">Idade do pet</p>
+                                        </div>
+                                        <div class="pet_gender">
+                                            <p>Sexo:</p>
+                                            <p class="text_field">Sexo do pet</p>
+                                        </div>
+                                        <div class="pet_breed">
+                                            <p>Raça:</p>
+                                            <p class="text_field">Raça do pet</p>
+                                        </div>
+                                        <div class="pet_specie">
+                                            <p>Espécie:</p>
+                                            <p class="text_field">Espécie do pet</p>
+                                        </div>
+                                    </div>
+                                    <div class="pet_owner_contact">
+                                        <p>Contato dono:</p>
+                                        <p class="text_field">Contato do dono do pet</p>
+                                    </div>
+                                    <div class="row_info">
+                                        <div class="pet_temperament">
+                                            <p>Temperamento:</p>
+                                            <p class="text_field">Temperamento do animal</p>
+                                        </div>
+                                        <div class="pet_status">
+                                            <p>Status:</p>
+                                            <p class="text_field">Status do animal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="pet">
                     <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
-                </div>
-                <div class="pet">
-                    <img src="../img/image.png" alt="pet image">
-                    <button title="Mais informações">Mais informações</button>
+                    <button title="Mais informações" class="more_info">Mais informações</button>
+                    <div class="pet_info">
+                        <div class="container_pet_info">
+                            <img src="../img/image.png" alt="pet image">
+                            <div class="pet_desc">
+                                <h1>Nome do pet</h1>
+                                <div class="pet_form">
+                                    <div class="pet_name">
+                                        <p>Nome:</p>
+                                        <p class="text_field">Nome do pet</p>
+                                    </div>
+                                    <div class="row_info">
+                                        <div class="pet_age">
+                                            <p>Idade:</p>
+                                            <p class="text_field">Idade do pet</p>
+                                        </div>
+                                        <div class="pet_gender">
+                                            <p>Sexo:</p>
+                                            <p class="text_field">Sexo do pet</p>
+                                        </div>
+                                        <div class="pet_breed">
+                                            <p>Raça:</p>
+                                            <p class="text_field">Raça do pet</p>
+                                        </div>
+                                        <div class="pet_specie">
+                                            <p>Espécie:</p>
+                                            <p class="text_field">Espécie do pet</p>
+                                        </div>
+                                    </div>
+                                    <div class="pet_owner_contact">
+                                        <p>Contato dono:</p>
+                                        <p class="text_field">Contato do dono do pet</p>
+                                    </div>
+                                    <div class="row_info">
+                                        <div class="pet_temperament">
+                                            <p>Temperamento:</p>
+                                            <p class="text_field">Temperamento do animal</p>
+                                        </div>
+                                        <div class="pet_status">
+                                            <p>Status:</p>
+                                            <p class="text_field">Status do animal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <div class="container main register_pets_page">
             <h1>Cadastre um novo pet</h1>
             <div class="form">

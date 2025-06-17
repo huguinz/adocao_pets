@@ -3,6 +3,7 @@
 import { loginPageElements } from './modules/elements/loginPage/elements.js'
 import { homePageElements } from './modules/elements/homePage/elements.js'
 import { loadingAnimation, clearCheckMessage } from './modules/utils/loginPage/utils.js'
+import { showOrHiddenPage } from './modules/utils/homePage/utils.js'
 import {
 	addOrRemoveMoveClass,
 	selectOptionsCategory,
@@ -96,6 +97,35 @@ if (isLogged) {
 		})
 	})()
 } else {
+	;(function defaultPage() {
+		const { inicialPage, petsPage, registerPetsPage } = homePageElements()
+		const hiddenItens = [registerPetsPage, petsPage]
+		const showItens = [inicialPage]
+
+		showOrHiddenPage(showItens, hiddenItens)
+	})()
+	;(function showRegisterPetPage() {
+		const { registerAnimalButton, inicialPage, petsPage, registerPetsPage } = homePageElements()
+		const hiddenItens = [inicialPage, petsPage]
+		const showItens = [registerPetsPage]
+
+		registerAnimalButton.addEventListener('click', () => {
+			showOrHiddenPage(showItens, hiddenItens)
+		})
+	})()
+	;(function showPetsPage() {
+		const { registeredAnimalButton, inicialPage, petsPage, registerPetsPage, moreInfoPet } = homePageElements()
+		const hiddenItens = [inicialPage, registerPetsPage]
+		const showItens = [petsPage]
+
+		registeredAnimalButton.addEventListener('click', () => {
+			showOrHiddenPage(showItens, hiddenItens)
+		})
+
+		moreInfoPet.forEach((element) => {
+			element.addEventListener('click', (event) => {})
+		})
+	})()
 	;(async function defaultBreeds() {
 		let { selectSpecie } = homePageElements()
 		selectSpecie = selectSpecie.value

@@ -67,3 +67,17 @@ export async function uploadImageToAzure(uploadParams) {
 		return false
 	}
 }
+
+export const showOrHiddenPage = (show, hidden) => {
+	hidden.forEach((hiddenItem) => {
+		hiddenItem.forEach((itensPage) => {
+			itensPage.style.display = 'none'
+		})
+	})
+
+	show.forEach((showItem) => {
+		showItem.forEach((itensPage) => {
+			itensPage.style.display = 'flex'
+		})
+	})
+}
