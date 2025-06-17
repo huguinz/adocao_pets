@@ -5,7 +5,7 @@ import { loginPageElements } from '../../../elements/loginPage/elements.js'
 export const loginUser = async () => {
 	try {
 		let { emailUser, passwordUser } = loginPageElements()
-		const url = 'http://10.107.144.23:8080/v1/controle-pet/login'
+		const url = 'http://localhost:8080/v1/controle-pet/login'
 		emailUser = emailUser.value
 		passwordUser = passwordUser.value
 
