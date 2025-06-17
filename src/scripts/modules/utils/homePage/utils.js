@@ -81,3 +81,67 @@ export const showOrHiddenPage = (show, hidden) => {
 		})
 	})
 }
+
+export const createInfoPet = async (data) => {
+	try {
+		const { containerPets } = homePageElements()
+		const { celular_responsavel, especie, foto, id, idade, nome, raca, sexo, status_saude, temperamento } = data
+
+		const containerPetInfo = document.createElement('div')
+		containerPetInfo.classList.add('pet')
+		containerPetInfo.innerHTML = `                  
+										<img src="${foto}" alt="pet image">
+										<button title="Mais informações" id="${id}" class="more_info">Mais informações</button>
+										<div class="pet_info">
+											<div class="container_pet_info">
+												<img src="${foto}" alt="pet image">
+												<div class="pet_desc">
+													<h1>${nome}</h1>
+													<div class="pet_form">
+														<div class="pet_name">
+															<p>Nome:</p>
+															<p class="text_field">${nome}</p>
+														</div>
+														<div class="row_info">
+															<div class="pet_age">
+																<p>Idade:</p>
+																<p class="text_field">${idade}</p>
+															</div>
+															<div class="pet_gender">
+																<p>Sexo:</p>
+																<p class="text_field">${sexo[0].sexo}</p>
+															</div>
+															<div class="pet_breed">
+																<p>Raça:</p>
+																<p class="text_field">${raca}</p>
+															</div>
+															<div class="pet_specie">
+																<p>Espécie:</p>
+																<p class="text_field">${especie}</p>
+															</div>
+														</div>
+														<div class="pet_owner_contact">
+															<p>Contato dono:</p>
+															<p class="text_field">${celular_responsavel}</p>
+														</div>
+														<div class="row_info">
+															<div class="pet_temperament">
+																<p>Temperamento:</p>
+																<p class="text_field">${temperamento[0].nome_temperamento}</p>
+															</div>
+															<div class="pet_status">
+																<p>Status:</p>
+																<p class="text_field">${status_saude[0].status_saude}</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										`
+
+		containerPets.appendChild(containerPetInfo)
+	} catch (error) {
+		return false
+	}
+}

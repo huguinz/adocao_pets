@@ -18,7 +18,7 @@ export function homePageElements() {
 		breedsDropdown: document.getElementById('breed'),
 		petForm: document.getElementById('register_pet'),
 		breedContainer: document.querySelector('.breed'),
-		animalPhoto: document.getElementById('preview-input'),
+		animalPhoto: document.getElementById('photo'),
 		animalName: document.getElementById('name'),
 		animalAge: document.getElementById('age'),
 		animalDescription: document.getElementById('desc'),
@@ -29,7 +29,9 @@ export function homePageElements() {
 		animalTelephone: document.getElementById('telephone'),
 		registerAnimalButton: document.getElementById('register_animal'),
 		registeredAnimalButton: document.getElementById('registered_animal'),
-		moreInfoPet: document.querySelectorAll('.more_info')
+		moreInfoPet: document.querySelectorAll('.more_info'),
+		containerPets: document.getElementById('pets'),
+		showedAnimalInfo: document.querySelectorAll('.active')
 	}
 
 	return elements

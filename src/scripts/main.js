@@ -12,11 +12,12 @@ import {
 	validateLoginUser,
 	validateRegisterMandatoryFields
 } from './modules/controller/loginPage/controller.js'
-import { validateSpecie, validateBreed, savePhoto } from './modules/controller/homePage/controller.js'
+import { validateSpecie, validateBreed, animalsInfo } from './modules/controller/homePage/controller.js'
+import { registerAnimal } from './modules/api/homePage/post/registerAnimal.js'
 
 const isLogged = localStorage.getItem('x')
 
-if (isLogged) {
+if (!isLogged) {
 	const setPageStatus = () => {
 		const { moveClass, unmoveClass, inputsRegister, inputsLogin } = loginPageElements()
 
@@ -113,18 +114,30 @@ if (isLogged) {
 			showOrHiddenPage(showItens, hiddenItens)
 		})
 	})()
-	;(function showPetsPage() {
-		const { registeredAnimalButton, inicialPage, petsPage, registerPetsPage, moreInfoPet } = homePageElements()
+	;(async function showPetsPage() {
+		const { registeredAnimalButton, inicialPage, petsPage, registerPetsPage } = homePageElements()
 		const hiddenItens = [inicialPage, registerPetsPage]
 		const showItens = [petsPage]
 
 		registeredAnimalButton.addEventListener('click', () => {
 			showOrHiddenPage(showItens, hiddenItens)
+
+			const { moreInfoPet } = homePageElements()
+
+			moreInfoPet.forEach((element) => {
+				element.addEventListener('click', (event) => {
+					const { showedAnimalInfo } = homePageElements()
+					const showinfo = event.target.nextElementSibling
+					showedAnimalInfo.forEach((item) => {
+						item.classList.remove('active')
+					})
+
+					showinfo.classList.add('active')
+				})
+			})
 		})
 
-		moreInfoPet.forEach((element) => {
-			element.addEventListener('click', (event) => {})
-		})
+		await animalsInfo()
 	})()
 	;(async function defaultBreeds() {
 		let { selectSpecie } = homePageElements()
@@ -145,8 +158,17 @@ if (isLogged) {
 	;(async function sendPetRegister() {
 		const { petForm, animalPhoto } = homePageElements()
 
-		petForm.addEventListener('submit', async () => {
-			await savePhoto(animalPhoto)
+		petForm.addEventListener('submit', async (event) => {
+			event.preventDefault()
+
+			await registerAnimal(animalPhoto)
+		})
+	})()
+	;(async function previewPhoto() {
+		const { animalPhoto } = homePageElements()
+
+		animalPhoto.addEventListener('change', () => {
+			console.log(animalPhoto.value)
 		})
 	})()
 }

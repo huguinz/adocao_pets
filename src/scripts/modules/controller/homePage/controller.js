@@ -1,7 +1,8 @@
 'use strict'
 
-import { vaccinesToSpecie, breedsToAnimal } from '../../utils/homePage/utils.js'
+import { vaccinesToSpecie, breedsToAnimal, createInfoPet, uploadImageToAzure } from '../../utils/homePage/utils.js'
 import { getDogBreeds, getCatBreeds } from '../../api/homePage/get/getAnimalBreeds.js'
+import { getAnimalsInfo } from '../../api/homePage/get/getAnimalsInfo.js'
 
 export const validateBreed = async (specie) => {
 	try {
@@ -54,8 +55,19 @@ export const validateSpecie = async (specie, optionValues) => {
 	}
 }
 
-export const savePhoto = async (photo) => {
+export const animalsInfo = async () => {
 	try {
+		const response = await getAnimalsInfo()
+
+		if (response.status_code === 200) {
+			const animalData = response.animais
+
+			for (const item of animalData) {
+				await createInfoPet(item)
+			}
+		} else {
+			return false
+		}
 	} catch (error) {
 		return error
 	}
